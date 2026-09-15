@@ -13,7 +13,7 @@
 |---|---|
 | **학력** | Boston University — Computer Science (B.A.) |
 | **자격증** | SQLD · 네트워크관리사 2급 · 리눅스마스터 2급 |
-| **경력** | 백엔드 개발자 · 2025-04-24 ~ 현재 (<!--YM_START-->1년 4개월차<!--YM_END--> · <!--DAYS_START-->510<!--DAYS_END-->일째) |
+| **경력** | 백엔드 개발자 · 2025-04-24 ~ 현재 (<!--YM_START-->1년 4개월차<!--YM_END--> · <!--DAYS_START-->509<!--DAYS_END-->일째) |
 | **현재 학습** | 코딩테스트 대비 — Java 기준, LeetCode / 프로그래머스 |
 | **Blog** | [Don't Stop Keep Going](https://yuchankim-dev.github.io/) |
 
