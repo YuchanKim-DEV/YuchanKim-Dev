@@ -1,16 +1,17 @@
-<h1 align="center">Hi, I'm Yuchan Kim 👋</h1>
-<p align="center">뒤쳐지지 않는 자바 백엔드 개발자가 되기 위해 매일 기록하는 중</p>
+<div align="center">
 
-<p align="center">
-  <a href="https://yuchankim-dev.github.io/"><img src="https://img.shields.io/badge/Blog-Don't%20Stop%20Keep%20Going-3a63f2?style=for-the-badge&logo=github&logoColor=white" alt="Blog"/></a>
-</p>
+# Hi, I'm Yuchan Kim 👋
+
+뒤쳐지지 않는 자바 백엔드 개발자가 되기 위해 매일 기록하는 중
+
+<a href="https://yuchankim-dev.github.io/"><img src="https://img.shields.io/badge/Blog-Don't%20Stop%20Keep%20Going-3a63f2?style=for-the-badge&logo=github&logoColor=white" alt="Blog"/></a>
 
 ---
 
 ## 👤 About Me
 
 | | |
-|---|---|
+|:---:|:---:|
 | **학력** | Boston University — Computer Science (B.A.) |
 | **자격증** | SQLD · 네트워크관리사 2급 · 리눅스마스터 2급 |
 | **경력** | 백엔드 개발자 · 2025-04-24 ~ 현재 (<!--YM_START-->1년 4개월차<!--YM_END--> · <!--DAYS_START-->509<!--DAYS_END-->일째) |
@@ -19,18 +20,16 @@
 
 ## 🛠️ Tech Stack
 
-<p>
-  <img src="https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Spring%20Boot-6DB33F?style=flat-square&logo=springboot&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Kafka-231F20?style=flat-square&logo=apachekafka&logoColor=white"/>
-  <img src="https://img.shields.io/badge/gRPC-4285F4?style=flat-square&logo=googlecloud&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Netty-000000?style=flat-square"/>
-  <img src="https://img.shields.io/badge/WebFlux-6DB33F?style=flat-square&logo=spring&logoColor=white"/>
-  <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white"/>
-</p>
+<img src="https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white"/>
+<img src="https://img.shields.io/badge/Spring%20Boot-6DB33F?style=flat-square&logo=springboot&logoColor=white"/>
+<img src="https://img.shields.io/badge/Kafka-231F20?style=flat-square&logo=apachekafka&logoColor=white"/>
+<img src="https://img.shields.io/badge/gRPC-4285F4?style=flat-square&logo=googlecloud&logoColor=white"/>
+<img src="https://img.shields.io/badge/Netty-000000?style=flat-square"/>
+<img src="https://img.shields.io/badge/WebFlux-6DB33F?style=flat-square&logo=spring&logoColor=white"/>
+<img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white"/>
 
 ## 🔥 GitHub Stats
 
-<p>
-  <img height="165" src="https://github-readme-streak-stats.herokuapp.com/?user=YuchanKim-DEV&hide_border=true"/>
-</p>
+<img height="165" src="https://github-readme-streak-stats.herokuapp.com/?user=YuchanKim-DEV&hide_border=true"/>
+
+</div>
