@@ -13,19 +13,35 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Compute days since 2025-04-24
+      - name: Compute tenure
         run: |
-          START="2025-04-24"
-          TODAY=$(date -u +%Y-%m-%d)
-          DAYS=$(( ( $(date -u -d "$TODAY" +%s) - $(date -u -d "$START" +%s) ) / 86400 ))
-          echo "DAYS=$DAYS" >> "$GITHUB_ENV"
+          python3 - <<'EOF' >> "$GITHUB_ENV"
+          from datetime import date
+
+          start = date(2025, 4, 24)
+          today = date.today()
+
+          days = (today - start).days
+
+          years = today.year - start.year
+          months = today.month - start.month
+          if today.day < start.day:
+              months -= 1
+          if months < 0:
+              years -= 1
+              months += 12
+
+          print(f"DAYS={days}")
+          print(f"YM={years}년 {months}개월차")
+          EOF
 
       - name: Update README
         run: |
           sed -i -E "s#(<!--DAYS_START-->)[0-9]+(<!--DAYS_END-->)#\1${DAYS}\2#" README.md
+          sed -i -E "s#(<!--YM_START-->).*(<!--YM_END-->)#\1${YM}\2#" README.md
 
       - name: Commit if changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git diff --quiet README.md || (git add README.md && git commit -m "chore: update days-at-job counter (${DAYS} days)" && git push)
+          git diff --quiet README.md || (git add README.md && git commit -m "chore: update tenure counter (${YM}, ${DAYS} days)" && git push)
