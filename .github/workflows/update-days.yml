@@ -1,0 +1,31 @@
+name: Update days-at-job counter
+
+on:
+  schedule:
+    - cron: "0 15 * * *"  # 매일 00:00 KST
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Compute days since 2025-04-24
+        run: |
+          START="2025-04-24"
+          TODAY=$(date -u +%Y-%m-%d)
+          DAYS=$(( ( $(date -u -d "$TODAY" +%s) - $(date -u -d "$START" +%s) ) / 86400 ))
+          echo "DAYS=$DAYS" >> "$GITHUB_ENV"
+
+      - name: Update README
+        run: |
+          sed -i -E "s#(<!--DAYS_START-->)[0-9]+(<!--DAYS_END-->)#\1${DAYS}\2#" README.md
+
+      - name: Commit if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git diff --quiet README.md || (git add README.md && git commit -m "chore: update days-at-job counter (${DAYS} days)" && git push)
