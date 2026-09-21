@@ -14,7 +14,7 @@
 ## 👤 About Me
 
 <table>
-<tr><td width="120"><b>이력</b></td><td>보스턴 생활 후 군 복무(K9 자주포병, 병장 만기전역) 마치고 학업을 마무리, 귀국 후 개발자로 활동 중</td></tr>
+<tr><td width="120"><b>학력</b></td><td>Boston University — Computer Science (B.A.)</td></tr>
 <tr><td><b>경력</b></td><td>백엔드 개발자 · 2025-04-24 ~ 현재 (<!--YM_START-->1년 4개월차<!--YM_END--> · <!--DAYS_START-->514<!--DAYS_END-->일째)</td></tr>
 <tr><td><b>자격증</b></td><td>SQLD · 네트워크관리사 2급 · 리눅스마스터 2급</td></tr>
 </table>
