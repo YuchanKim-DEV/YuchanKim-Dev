@@ -11,7 +11,6 @@
 ## 👤 About Me
 
 | | |
-|:---:|:---:|
 | **학력** | Boston University — Computer Science (B.A.) |
 | **자격증** | SQLD · 네트워크관리사 2급 · 리눅스마스터 2급 |
 | **경력** | 백엔드 개발자 · 2025-04-24 ~ 현재 (<!--YM_START-->1년 4개월차<!--YM_END--> · <!--DAYS_START-->514<!--DAYS_END-->일째) |
