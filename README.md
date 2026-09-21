@@ -25,14 +25,14 @@
 
 <table width="100%">
 <tr>
-<td valign="top" width="50%">
+<td valign="top" width="100%">
 
 **Language & Framework**
 
 <img src="https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white"/> <img src="https://img.shields.io/badge/Spring%20Boot-6DB33F?style=flat-square&logo=springboot&logoColor=white"/> <img src="https://img.shields.io/badge/WebFlux-6DB33F?style=flat-square&logo=spring&logoColor=white"/> <img src="https://img.shields.io/badge/Netty-000000?style=flat-square"/> <img src="https://img.shields.io/badge/Kafka-231F20?style=flat-square&logo=apachekafka&logoColor=white"/>
 
 </td>
-<td valign="top" width="50%">
+<td valign="top" width="100%">
 
 **Database & Infra**
 
