@@ -13,7 +13,7 @@
 
 ## 👤 About Me
 
-<table>
+<table width="100%">
 <tr><td width="120"><b>학력</b></td><td><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Boston_University_seal.svg/40px-Boston_University_seal.svg.png" height="16" valign="middle"/> Boston University — Computer Science (B.A.)</td></tr>
 <tr><td><b>경력</b></td><td>백엔드 개발자 · 2025-04-24 ~ 현재 (<!--YM_START-->1년 4개월차<!--YM_END--> · <!--DAYS_START-->514<!--DAYS_END-->일째)</td></tr>
 <tr><td><b>자격증</b></td><td>SQLD · 네트워크관리사 2급 · 리눅스마스터 2급</td></tr>
@@ -23,19 +23,24 @@
 
 ## 🛠️ Tech Stack
 
+<table width="100%">
+<tr>
+<td valign="top" width="50%">
+
 **Language & Framework**
 
-<img src="https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white"/>
-<img src="https://img.shields.io/badge/Spring%20Boot-6DB33F?style=flat-square&logo=springboot&logoColor=white"/>
-<img src="https://img.shields.io/badge/WebFlux-6DB33F?style=flat-square&logo=spring&logoColor=white"/>
-<img src="https://img.shields.io/badge/Netty-000000?style=flat-square"/>
-<img src="https://img.shields.io/badge/Kafka-231F20?style=flat-square&logo=apachekafka&logoColor=white"/>
+<img src="https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white"/> <img src="https://img.shields.io/badge/Spring%20Boot-6DB33F?style=flat-square&logo=springboot&logoColor=white"/> <img src="https://img.shields.io/badge/WebFlux-6DB33F?style=flat-square&logo=spring&logoColor=white"/> <img src="https://img.shields.io/badge/Netty-000000?style=flat-square"/> <img src="https://img.shields.io/badge/Kafka-231F20?style=flat-square&logo=apachekafka&logoColor=white"/>
+
+</td>
+<td valign="top" width="50%">
 
 **Database & Infra**
 
-<img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white"/>
-<img src="https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=mysql&logoColor=white"/>
-<img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white"/>
+<img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white"/> <img src="https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=mysql&logoColor=white"/> <img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white"/>
+
+</td>
+</tr>
+</table>
 
 <br/>
 
