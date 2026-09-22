@@ -68,7 +68,7 @@
 <tr>
 <td><b>Network</b></td>
 <td>
-<img src="https://img.shields.io/badge/Netty-000000?style=flat-square"/> <img src="https://img.shields.io/badge/TCP%2FSocket-4B5563?style=flat-square"/>
+<img src="https://img.shields.io/badge/Netty-000000?style=flat-square"/>
 </td>
 </tr>
 <tr>
