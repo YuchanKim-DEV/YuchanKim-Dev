@@ -38,7 +38,7 @@
 </tr>
 <tr>
 <td><b>기록</b></td>
-<td><a href="https://yuchankim-dev.github.io/">Don't Stop Keep Going</a> — 배운 것을 글로 남기며 매일 쌓아가는 중</td>
+<td><a href="https://yuchankim-dev.github.io/">Don't Stop Keep Going</a> — 배운 것을 글로 남기며 매일 쌓아가는 중<img src="assets/spacer.png" width="1000" height="1" alt=""/></td>
 </tr>
 </table>
 
@@ -80,7 +80,7 @@
 <tr>
 <td><b>Tools</b></td>
 <td>
-<img src="https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white"/> <img src="https://img.shields.io/badge/GitHub%20Actions-2088FF?style=flat-square&logo=githubactions&logoColor=white"/> <img src="https://img.shields.io/badge/Gradle-02303A?style=flat-square&logo=gradle&logoColor=white"/> <img src="https://img.shields.io/badge/IntelliJ%20IDEA-000000?style=flat-square&logo=intellijidea&logoColor=white"/>
+<img src="https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white"/> <img src="https://img.shields.io/badge/GitHub%20Actions-2088FF?style=flat-square&logo=githubactions&logoColor=white"/> <img src="https://img.shields.io/badge/Gradle-02303A?style=flat-square&logo=gradle&logoColor=white"/> <img src="https://img.shields.io/badge/IntelliJ%20IDEA-000000?style=flat-square&logo=intellijidea&logoColor=white"/><img src="assets/spacer.png" width="1000" height="1" alt=""/>
 </td>
 </tr>
 </table>
