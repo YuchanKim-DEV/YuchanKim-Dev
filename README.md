@@ -17,7 +17,7 @@
 
 <table width="100%">
 <tr>
-<td width="110"><b>학력</b></td>
+<td width="130"><b>학력</b></td>
 <td width="900"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Boston_University_seal.svg/40px-Boston_University_seal.svg.png" height="16" valign="middle"/>&nbsp; Boston University — Computer Science (B.A.)</td>
 </tr>
 <tr>
@@ -48,7 +48,7 @@
 
 <table width="100%">
 <tr>
-<td width="110"><b>Language</b></td>
+<td width="130"><b>Language</b></td>
 <td width="900">
 <img src="https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white"/> <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white"/> <img src="https://img.shields.io/badge/SQL-336791?style=flat-square"/>
 </td>
