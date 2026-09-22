@@ -25,6 +25,10 @@
 <td>백엔드 개발자 · 2025-04-24 ~ 현재 (<!--YM_START-->1년 4개월차<!--YM_END--> · <!--DAYS_START-->515<!--DAYS_END-->일째)</td>
 </tr>
 <tr>
+<td><b>주요 경험</b></td>
+<td>Kafka 기반 실시간 데이터 파이프라인 · 음성인식(STT) 연동 백엔드 · TCP 소켓 서버</td>
+</tr>
+<tr>
 <td><b>자격증</b></td>
 <td>SQLD · 네트워크관리사 2급 · 리눅스마스터 2급</td>
 </tr>
@@ -46,7 +50,7 @@
 <tr>
 <td width="110"><b>Language</b></td>
 <td>
-<img src="https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white"/> <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white"/> <img src="https://img.shields.io/badge/SQL-336791?style=flat-square"/>
+<img src="https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white"/> <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white"/> <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white"/> <img src="https://img.shields.io/badge/SQL-336791?style=flat-square"/>
 </td>
 </tr>
 <tr>
@@ -88,18 +92,13 @@
 <div align="center">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats-eight-theta.vercel.app/api?username=YuchanKim-DEV&show_icons=true&hide_border=true&hide_title=true&icon_color=58A6FF&text_color=C9D1D9&title_color=58A6FF&bg_color=00000000"/>
-  <img width="495" src="https://github-readme-stats-eight-theta.vercel.app/api?username=YuchanKim-DEV&show_icons=true&hide_border=true&hide_title=true&bg_color=00000000" alt="GitHub Stats"/>
+  <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats-eight-theta.vercel.app/api?username=YuchanKim-DEV&show_icons=true&hide_border=true&hide_title=true&include_all_commits=true&hide=stars,prs,issues,contribs&icon_color=58A6FF&text_color=C9D1D9&bg_color=00000000"/>
+  <img width="495" src="https://github-readme-stats-eight-theta.vercel.app/api?username=YuchanKim-DEV&show_icons=true&hide_border=true&hide_title=true&include_all_commits=true&hide=stars,prs,issues,contribs&bg_color=00000000" alt="GitHub Stats"/>
 </picture>
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-streak-stats.herokuapp.com/?user=YuchanKim-DEV&hide_border=true&background=00000000&ring=58A6FF&fire=58A6FF&currStreakLabel=58A6FF&sideNums=C9D1D9&currStreakNum=C9D1D9&dates=8B949E&sideLabels=8B949E"/>
   <img width="495" src="https://github-readme-streak-stats.herokuapp.com/?user=YuchanKim-DEV&hide_border=true&background=00000000&ring=0969DA&fire=0969DA&currStreakLabel=0969DA" alt="Streak"/>
-</picture>
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats-eight-theta.vercel.app/api/top-langs/?username=YuchanKim-DEV&layout=compact&hide_border=true&hide_title=true&langs_count=6&card_width=445&text_color=C9D1D9&bg_color=00000000"/>
-  <img width="495" src="https://github-readme-stats-eight-theta.vercel.app/api/top-langs/?username=YuchanKim-DEV&layout=compact&hide_border=true&hide_title=true&langs_count=6&card_width=445&bg_color=00000000" alt="Top Languages"/>
 </picture>
 
 </div>
