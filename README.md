@@ -92,8 +92,8 @@
 <div align="center">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats-eight-theta.vercel.app/api?username=YuchanKim-DEV&show_icons=true&hide_border=true&hide_title=true&include_all_commits=true&hide=stars,prs,issues,contribs&bg_color=0D1117&text_color=C9D1D9&icon_color=58A6FF"/>
-  <img width="495" src="https://github-readme-stats-eight-theta.vercel.app/api?username=YuchanKim-DEV&show_icons=true&hide_border=true&hide_title=true&include_all_commits=true&hide=stars,prs,issues,contribs&bg_color=FFFFFF&text_color=24292F&icon_color=0969DA" alt="GitHub Stats"/>
+  <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats-eight-theta.vercel.app/api?username=YuchanKim-DEV&show_icons=true&hide_border=true&hide_title=true&include_all_commits=true&hide=stars%2Cprs%2Cissues%2Ccontribs&bg_color=0D1117&text_color=C9D1D9&icon_color=58A6FF"/>
+  <img width="495" src="https://github-readme-stats-eight-theta.vercel.app/api?username=YuchanKim-DEV&show_icons=true&hide_border=true&hide_title=true&include_all_commits=true&hide=stars%2Cprs%2Cissues%2Ccontribs&bg_color=FFFFFF&text_color=24292F&icon_color=0969DA" alt="GitHub Stats"/>
 </picture>
 
 <picture>
