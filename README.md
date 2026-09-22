@@ -92,13 +92,13 @@
 <div align="center">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats-eight-theta.vercel.app/api?username=YuchanKim-DEV&show_icons=true&hide_border=true&hide_title=true&include_all_commits=true&hide=stars,prs,issues,contribs&icon_color=58A6FF&text_color=C9D1D9&bg_color=00000000"/>
-  <img width="495" src="https://github-readme-stats-eight-theta.vercel.app/api?username=YuchanKim-DEV&show_icons=true&hide_border=true&hide_title=true&include_all_commits=true&hide=stars,prs,issues,contribs&bg_color=00000000" alt="GitHub Stats"/>
+  <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats-eight-theta.vercel.app/api?username=YuchanKim-DEV&show_icons=true&hide_border=true&hide_title=true&include_all_commits=true&hide=stars,prs,issues,contribs&bg_color=0D1117&text_color=C9D1D9&icon_color=58A6FF"/>
+  <img width="495" src="https://github-readme-stats-eight-theta.vercel.app/api?username=YuchanKim-DEV&show_icons=true&hide_border=true&hide_title=true&include_all_commits=true&hide=stars,prs,issues,contribs&bg_color=FFFFFF&text_color=24292F&icon_color=0969DA" alt="GitHub Stats"/>
 </picture>
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-streak-stats.herokuapp.com/?user=YuchanKim-DEV&hide_border=true&background=00000000&ring=58A6FF&fire=58A6FF&currStreakLabel=58A6FF&sideNums=C9D1D9&currStreakNum=C9D1D9&dates=8B949E&sideLabels=8B949E"/>
-  <img width="495" src="https://github-readme-streak-stats.herokuapp.com/?user=YuchanKim-DEV&hide_border=true&background=00000000&ring=0969DA&fire=0969DA&currStreakLabel=0969DA" alt="Streak"/>
+  <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-streak-stats.herokuapp.com/?user=YuchanKim-DEV&hide_border=true&background=0D1117&ring=58A6FF&fire=58A6FF&currStreakLabel=58A6FF&sideNums=C9D1D9&currStreakNum=C9D1D9&dates=8B949E&sideLabels=8B949E"/>
+  <img width="495" src="https://github-readme-streak-stats.herokuapp.com/?user=YuchanKim-DEV&hide_border=true&background=FFFFFF&ring=0969DA&fire=0969DA&currStreakLabel=0969DA&sideNums=24292F&currStreakNum=24292F" alt="Streak"/>
 </picture>
 
 </div>
