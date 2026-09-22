@@ -18,7 +18,7 @@
 <table width="100%">
 <tr>
 <td width="110"><b>학력</b></td>
-<td><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Boston_University_seal.svg/40px-Boston_University_seal.svg.png" height="16" valign="middle"/>&nbsp; Boston University — Computer Science (B.A.)</td>
+<td width="900"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Boston_University_seal.svg/40px-Boston_University_seal.svg.png" height="16" valign="middle"/>&nbsp; Boston University — Computer Science (B.A.)</td>
 </tr>
 <tr>
 <td><b>경력</b></td>
@@ -38,7 +38,7 @@
 </tr>
 <tr>
 <td><b>기록</b></td>
-<td><a href="https://yuchankim-dev.github.io/">Don't Stop Keep Going</a> — 배운 것을 글로 남기며 매일 쌓아가는 중<img src="assets/spacer.png" width="1000" height="1" alt=""/></td>
+<td><a href="https://yuchankim-dev.github.io/">Don't Stop Keep Going</a> — 배운 것을 글로 남기며 매일 쌓아가는 중</td>
 </tr>
 </table>
 
@@ -49,7 +49,7 @@
 <table width="100%">
 <tr>
 <td width="110"><b>Language</b></td>
-<td>
+<td width="900">
 <img src="https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white"/> <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white"/> <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white"/> <img src="https://img.shields.io/badge/SQL-336791?style=flat-square"/>
 </td>
 </tr>
@@ -80,7 +80,7 @@
 <tr>
 <td><b>Tools</b></td>
 <td>
-<img src="https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white"/> <img src="https://img.shields.io/badge/GitHub%20Actions-2088FF?style=flat-square&logo=githubactions&logoColor=white"/> <img src="https://img.shields.io/badge/Gradle-02303A?style=flat-square&logo=gradle&logoColor=white"/> <img src="https://img.shields.io/badge/IntelliJ%20IDEA-000000?style=flat-square&logo=intellijidea&logoColor=white"/><img src="assets/spacer.png" width="1000" height="1" alt=""/>
+<img src="https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white"/> <img src="https://img.shields.io/badge/GitHub%20Actions-2088FF?style=flat-square&logo=githubactions&logoColor=white"/> <img src="https://img.shields.io/badge/Gradle-02303A?style=flat-square&logo=gradle&logoColor=white"/> <img src="https://img.shields.io/badge/IntelliJ%20IDEA-000000?style=flat-square&logo=intellijidea&logoColor=white"/>
 </td>
 </tr>
 </table>
