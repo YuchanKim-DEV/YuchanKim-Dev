@@ -88,17 +88,18 @@
 <div align="center">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats-eight-theta.vercel.app/api?username=YuchanKim-DEV&show_icons=true&hide_border=true&hide_title=true&theme=github_dark&bg_color=00000000"/>
-  <img height="165" src="https://github-readme-stats-eight-theta.vercel.app/api?username=YuchanKim-DEV&show_icons=true&hide_border=true&hide_title=true&bg_color=00000000" alt="GitHub Stats"/>
-</picture>
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats-eight-theta.vercel.app/api/top-langs/?username=YuchanKim-DEV&layout=compact&hide_border=true&hide_title=true&langs_count=6&theme=github_dark&bg_color=00000000"/>
-  <img height="165" src="https://github-readme-stats-eight-theta.vercel.app/api/top-langs/?username=YuchanKim-DEV&layout=compact&hide_border=true&hide_title=true&langs_count=6&bg_color=00000000" alt="Top Languages"/>
+  <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats-eight-theta.vercel.app/api?username=YuchanKim-DEV&show_icons=true&hide_border=true&hide_title=true&icon_color=58A6FF&text_color=C9D1D9&title_color=58A6FF&bg_color=00000000"/>
+  <img width="495" src="https://github-readme-stats-eight-theta.vercel.app/api?username=YuchanKim-DEV&show_icons=true&hide_border=true&hide_title=true&bg_color=00000000" alt="GitHub Stats"/>
 </picture>
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-streak-stats.herokuapp.com/?user=YuchanKim-DEV&hide_border=true&theme=transparent&ring=58A6FF&fire=58A6FF&currStreakLabel=58A6FF&sideNums=C9D1D9&currStreakNum=C9D1D9&dates=8B949E&sideLabels=8B949E"/>
-  <img height="165" src="https://github-readme-streak-stats.herokuapp.com/?user=YuchanKim-DEV&hide_border=true&background=00000000&ring=0969DA&fire=0969DA&currStreakLabel=0969DA" alt="Streak"/>
+  <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-streak-stats.herokuapp.com/?user=YuchanKim-DEV&hide_border=true&background=00000000&ring=58A6FF&fire=58A6FF&currStreakLabel=58A6FF&sideNums=C9D1D9&currStreakNum=C9D1D9&dates=8B949E&sideLabels=8B949E"/>
+  <img width="495" src="https://github-readme-streak-stats.herokuapp.com/?user=YuchanKim-DEV&hide_border=true&background=00000000&ring=0969DA&fire=0969DA&currStreakLabel=0969DA" alt="Streak"/>
+</picture>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats-eight-theta.vercel.app/api/top-langs/?username=YuchanKim-DEV&layout=compact&hide_border=true&hide_title=true&langs_count=6&card_width=445&text_color=C9D1D9&bg_color=00000000"/>
+  <img width="495" src="https://github-readme-stats-eight-theta.vercel.app/api/top-langs/?username=YuchanKim-DEV&layout=compact&hide_border=true&hide_title=true&langs_count=6&card_width=445&bg_color=00000000" alt="Top Languages"/>
 </picture>
 
 </div>
