@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 440" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Apple SD Gothic Neo','Malgun Gothic',sans-serif">
+<defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#8B949E"/></marker></defs>
+<rect x="95" y="20" width="145" height="60" rx="8" fill="#0969DA"/>
+<text x="167.5" y="46.5" text-anchor="middle" font-size="14" font-weight="600" fill="#FFFFFF">요청 API</text>
+<text x="167.5" y="63.5" text-anchor="middle" font-size="14" font-weight="600" fill="#FFFFFF">(Producer)</text>
+<path d="M300,28 a72.5,8 0 0,1 145,0 v44 a72.5,8 0 0,1 -145,0 z" fill="#30363D"/>
+<ellipse cx="372.5" cy="28" rx="72.5" ry="8" fill="none" stroke="#8B949E" stroke-opacity=".6"/>
+<text x="372.5" y="50.5" text-anchor="middle" font-size="14" font-weight="600" fill="#FFFFFF">Kafka</text>
+<text x="372.5" y="67.5" text-anchor="middle" font-size="14" font-weight="600" fill="#FFFFFF">Reqdata 토픽</text>
+<rect x="505" y="20" width="145" height="60" rx="8" fill="#30363D"/>
+<text x="577.5" y="46.5" text-anchor="middle" font-size="14" font-weight="600" fill="#FFFFFF">AI 파트</text>
+<text x="577.5" y="63.5" text-anchor="middle" font-size="14" font-weight="600" fill="#FFFFFF">STT 처리</text>
+<rect x="710" y="20" width="145" height="60" rx="8" fill="#30363D"/>
+<text x="782.5" y="55.0" text-anchor="middle" font-size="14" font-weight="600" fill="#FFFFFF">STT 엔진 API</text>
+<path d="M95,168 a72.5,8 0 0,1 145,0 v44 a72.5,8 0 0,1 -145,0 z" fill="#30363D"/>
+<ellipse cx="167.5" cy="168" rx="72.5" ry="8" fill="none" stroke="#8B949E" stroke-opacity=".6"/>
+<text x="167.5" y="199.0" text-anchor="middle" font-size="14" font-weight="600" fill="#FFFFFF">MySQL</text>
+<rect x="300" y="160" width="145" height="60" rx="8" fill="#0969DA"/>
+<text x="372.5" y="186.5" text-anchor="middle" font-size="14" font-weight="600" fill="#FFFFFF">결과 컨슈머</text>
+<text x="372.5" y="203.5" text-anchor="middle" font-size="14" font-weight="600" fill="#FFFFFF">(Consumer)</text>
+<path d="M505,168 a72.5,8 0 0,1 145,0 v44 a72.5,8 0 0,1 -145,0 z" fill="#30363D"/>
+<ellipse cx="577.5" cy="168" rx="72.5" ry="8" fill="none" stroke="#8B949E" stroke-opacity=".6"/>
+<text x="577.5" y="190.5" text-anchor="middle" font-size="14" font-weight="600" fill="#FFFFFF">Kafka</text>
+<text x="577.5" y="207.5" text-anchor="middle" font-size="14" font-weight="600" fill="#FFFFFF">SttDia 토픽</text>
+<rect x="710" y="160" width="145" height="60" rx="8" fill="#30363D"/>
+<text x="782.5" y="186.5" text-anchor="middle" font-size="14" font-weight="600" fill="#FFFFFF">AI 파트</text>
+<text x="782.5" y="203.5" text-anchor="middle" font-size="14" font-weight="600" fill="#FFFFFF">분류·요약 처리</text>
+<path d="M505,308 a72.5,8 0 0,1 145,0 v44 a72.5,8 0 0,1 -145,0 z" fill="#30363D"/>
+<ellipse cx="577.5" cy="308" rx="72.5" ry="8" fill="none" stroke="#8B949E" stroke-opacity=".6"/>
+<text x="577.5" y="330.5" text-anchor="middle" font-size="14" font-weight="600" fill="#FFFFFF">Kafka</text>
+<text x="577.5" y="347.5" text-anchor="middle" font-size="14" font-weight="600" fill="#FFFFFF">Class·Summary 토픽</text>
+<rect x="710" y="300" width="145" height="60" rx="8" fill="#30363D"/>
+<text x="782.5" y="326.5" text-anchor="middle" font-size="14" font-weight="600" fill="#FFFFFF">분류·요약</text>
+<text x="782.5" y="343.5" text-anchor="middle" font-size="14" font-weight="600" fill="#FFFFFF">엔진 API</text>
+<path d="M8,50.0 L91,50.0" fill="none" stroke="#8B949E" stroke-width="1.6" marker-end="url(#arr)"/>
+<text x="48" y="42.0" text-anchor="middle" font-size="12" fill="#8B949E">상담 시스템</text>
+<path d="M240,50.0 L296,50.0" fill="none" stroke="#8B949E" stroke-width="1.6" marker-end="url(#arr)"/>
+<text x="268.0" y="42.0" text-anchor="middle" font-size="12" fill="#8B949E">Produce</text>
+<path d="M445,50.0 L501,50.0" fill="none" stroke="#8B949E" stroke-width="1.6" marker-end="url(#arr)"/>
+<text x="473.0" y="42.0" text-anchor="middle" font-size="12" fill="#8B949E">Consume</text>
+<path d="M654,50.0 L706,50.0" fill="none" stroke="#8B949E" stroke-width="1.6" marker-start="url(#arr)" marker-end="url(#arr)"/>
+<text x="680.0" y="42.0" text-anchor="middle" font-size="12" fill="#8B949E">호출</text>
+<path d="M577.5,82 L577.5,156" fill="none" stroke="#8B949E" stroke-width="1.6" marker-end="url(#arr)"/>
+<text x="585.5" y="124.0" text-anchor="start" font-size="12" fill="#8B949E">Produce</text>
+<path d="M505,190.0 L449,190.0" fill="none" stroke="#8B949E" stroke-width="1.6" marker-end="url(#arr)"/>
+<text x="475.0" y="182.0" text-anchor="middle" font-size="12" fill="#8B949E">Consume</text>
+<path d="M650,190.0 L706,190.0" fill="none" stroke="#8B949E" stroke-width="1.6" marker-end="url(#arr)"/>
+<text x="680.0" y="182.0" text-anchor="middle" font-size="12" fill="#8B949E">Consume</text>
+<path d="M300,190.0 L244,190.0" fill="none" stroke="#8B949E" stroke-width="1.6" marker-end="url(#arr)"/>
+<text x="270.0" y="182.0" text-anchor="middle" font-size="12" fill="#8B949E">저장</text>
+<path d="M812.5,224 L812.5,296" fill="none" stroke="#8B949E" stroke-width="1.6" marker-start="url(#arr)" marker-end="url(#arr)"/>
+<text x="820.5" y="264.0" text-anchor="start" font-size="12" fill="#8B949E">호출</text>
+<path d="M752.5,222 C752.5,260 690,330.0 654,330.0" fill="none" stroke="#8B949E" stroke-width="1.6" marker-end="url(#arr)"/>
+<text x="746.5" y="248" text-anchor="end" font-size="12" fill="#8B949E">Produce</text>
+<path d="M505,330.0 C392.5,330.0 392.5,260 392.5,224" fill="none" stroke="#8B949E" stroke-width="1.6" marker-end="url(#arr)"/>
+<text x="400.5" y="324.0" text-anchor="start" font-size="12" fill="#8B949E">Consume</text>
+<path d="M352.5,222 C352.5,410 782.5,410 782.5,364" fill="none" stroke="#8B949E" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#arr)"/>
+<text x="537.5" y="402" text-anchor="middle" font-size="12" fill="#8B949E">빈 값 · 오류 시 엔진 직접 호출 후 저장</text>
+<rect x="600" y="418" width="12" height="12" rx="2" fill="#0969DA"/><text x="618" y="428" text-anchor="start" font-size="12" fill="#8B949E">직접 설계·개발</text><rect x="730" y="418" width="12" height="12" rx="2" fill="#30363D"/><text x="748" y="428" text-anchor="start" font-size="12" fill="#8B949E">다른 파트 담당</text>
+</svg>

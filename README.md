@@ -193,7 +193,7 @@
 
 `2025.08 ~ 2025.12` &nbsp; 서버 2대 운영
 
-<img src="assets/arch-p4-v2.svg" width="100%" alt="Project 4 아키텍처"/>
+<img src="assets/arch-p4-v3.svg" width="100%" alt="Project 4 아키텍처"/>
 
 | 해결한 문제 | Before | After |
 |:---|:---:|:---:|
