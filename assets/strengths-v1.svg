@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Apple SD Gothic Neo','Malgun Gothic',sans-serif">
+<rect x="1.0" y="1" width="441.0" height="102" rx="12" fill="#388BFD" fill-opacity=".06" stroke="#8B949E" stroke-opacity=".5" stroke-width="1.2"/>
+<rect x="1.0" y="22" width="4" height="60" rx="2" fill="#388BFD"/>
+<text x="24.0" y="34" font-size="16" font-weight="700" fill="#388BFD">근본 원인까지 추적하는 문제 해결</text>
+<text x="24.0" y="62" font-size="13" fill="#8B949E">· CPU 200% 쏠림의 원인을 gRPC · L4 분산 구조에서 규명</text>
+<text x="24.0" y="84" font-size="13" fill="#8B949E">· 하루 2만 건 누락 → 실시간 재시도로 재발 0건</text>
+<rect x="458.0" y="1" width="441.0" height="102" rx="12" fill="#388BFD" fill-opacity=".06" stroke="#8B949E" stroke-opacity=".5" stroke-width="1.2"/>
+<rect x="458.0" y="22" width="4" height="60" rx="2" fill="#388BFD"/>
+<text x="481.0" y="34" font-size="16" font-weight="700" fill="#388BFD">데이터 유실 없는 메시지 처리 설계</text>
+<text x="481.0" y="62" font-size="13" fill="#8B949E">· 저장 후 커밋 · Graceful Shutdown · 멱등 저장</text>
+<text x="481.0" y="84" font-size="13" fill="#8B949E">· 고객사 일일 1,000건 검수에서 누락 0건</text>
+<rect x="1.0" y="119" width="441.0" height="102" rx="12" fill="#388BFD" fill-opacity=".06" stroke="#8B949E" stroke-opacity=".5" stroke-width="1.2"/>
+<rect x="1.0" y="140" width="4" height="60" rx="2" fill="#388BFD"/>
+<text x="24.0" y="152" font-size="16" font-weight="700" fill="#388BFD">병목을 찾아 수치로 개선</text>
+<text x="24.0" y="180" font-size="13" fill="#8B949E">· 금칙어 검사 30s → 50ms (오토마톤 캐시)</text>
+<text x="24.0" y="202" font-size="13" fill="#8B949E">· 결과 전달 LAG 10,000+ → 0 (비동기 전환)</text>
+<rect x="458.0" y="119" width="441.0" height="102" rx="12" fill="#388BFD" fill-opacity=".06" stroke="#8B949E" stroke-opacity=".5" stroke-width="1.2"/>
+<rect x="458.0" y="140" width="4" height="60" rx="2" fill="#388BFD"/>
+<text x="481.0" y="152" font-size="16" font-weight="700" fill="#388BFD">운영 환경을 고려한 트레이드오프 판단</text>
+<text x="481.0" y="180" font-size="13" fill="#8B949E">· 운영 DB 락 위험 → 인덱스 대신 전용 테이블로 중복 차단</text>
+<text x="481.0" y="202" font-size="13" fill="#8B949E">· 엔진이 문맥을 보도록 연동 단위 변경 → 마스킹 98%</text>
+<rect x="1.0" y="237" width="441.0" height="102" rx="12" fill="#388BFD" fill-opacity=".06" stroke="#8B949E" stroke-opacity=".5" stroke-width="1.2"/>
+<rect x="1.0" y="258" width="4" height="60" rx="2" fill="#388BFD"/>
+<text x="24.0" y="270" font-size="16" font-weight="700" fill="#388BFD">운영 오너십</text>
+<text x="24.0" y="298" font-size="13" fill="#8B949E">· 직접 데이터를 확인하다 화자 구분 버그 발견 · 개선</text>
+<text x="24.0" y="320" font-size="13" fill="#8B949E">· DB 크레덴셜 만료 2주 전 사전 감지로 장애 예방</text>
+<rect x="458.0" y="237" width="441.0" height="102" rx="12" fill="#388BFD" fill-opacity=".06" stroke="#8B949E" stroke-opacity=".5" stroke-width="1.2"/>
+<rect x="458.0" y="258" width="4" height="60" rx="2" fill="#388BFD"/>
+<text x="481.0" y="270" font-size="16" font-weight="700" fill="#388BFD">협업과 커뮤니케이션</text>
+<text x="481.0" y="298" font-size="13" fill="#8B949E">· 해외 확장 프로젝트 메인 담당으로 고객사 요구사항 조율</text>
+<text x="481.0" y="320" font-size="13" fill="#8B949E">· 타 파트 결과 누락 시 원인 · 보완점을 함께 찾아 해결</text>
+</svg>

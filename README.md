@@ -44,6 +44,12 @@
 </tr>
 </table>
 
+## 🎯 Core Strengths
+
+<img src="assets/strengths-v1.svg" width="100%" alt="핵심 역량"/>
+
+<br/>
+
 ## 🛠 Tech Stack
 
 <table width="100%">
