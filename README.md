@@ -150,19 +150,19 @@
 
 ```mermaid
 flowchart LR
-    GW["음성 게이트웨이"] -- "TCP 음성 스트림" --> TCP["Netty TCP 서버"]
-    TCP -- "gRPC Streaming<br/>채널 풀 · 연결 회전" --> STT["STT 엔진<br/>(로드밸런서 뒤 다중 서버)"]
-    STT -- "인식 결과" --> K[("Kafka")]
-    K --> C["결과 전달 컨슈머<br/>WebClient 비동기"]
-    C -- "REST · OAuth2" --> CRM["고객사 시스템"]
+    GW["음성 게이트웨이"] --> TCP["Netty<br/>TCP 서버"]
+    TCP -- gRPC --> STT["STT 엔진"]
+    STT --> K[("Kafka")]
+    K --> C["결과 전달<br/>컨슈머"]
+    C -- REST --> CRM["고객사<br/>시스템"]
     class TCP,C mine
     classDef mine fill:#0969DA,stroke:#0969DA,color:#fff
 ```
 
 | 해결한 문제 | Before | After |
-|:---|:---|:---|
-| STT 엔진 부하 쏠림 (최고 CPU) | `██████████` 200% | `████` **80% 이하** |
-| 결과 전달 지연 (처리 대기) | `██████████` 1만 건+ | `▏` **평시 0건** |
+|:---|:---:|:---:|
+| STT 엔진 부하 쏠림 (최고 CPU) | <img src="https://img.shields.io/badge/200%25-CF222E?style=flat-square" alt="200%"/> | <img src="https://img.shields.io/badge/80%25_%EC%9D%B4%ED%95%98-2EA44F?style=flat-square" alt="80% 이하"/> |
+| 결과 전달 지연 (처리 대기) | <img src="https://img.shields.io/badge/1%EB%A7%8C_%EA%B1%B4%2B-CF222E?style=flat-square" alt="1만 건+"/> | <img src="https://img.shields.io/badge/%ED%8F%89%EC%8B%9C_0%EA%B1%B4-2EA44F?style=flat-square" alt="평시 0건"/> |
 
 - **부하 분산** &nbsp;gRPC 장기 연결이 로드밸런서 뒤 한 서버에 고정되는 원인을 찾아, 채널 풀 + 주기적 연결 회전으로 재분산 (진행 중 통화는 유지) &nbsp;`gRPC` `Semaphore`
 - **TCP 서버** &nbsp;바이너리 프로토콜 파싱, 통화·채널 단위 큐로 순서를 지키며 병렬 처리, 큐 포화 시 읽기를 멈추는 백프레셔 &nbsp;`Netty` `Backpressure`
@@ -177,19 +177,18 @@ flowchart LR
 
 ```mermaid
 flowchart LR
-    STT["STT 엔진"] -- "Open · Final · Close" --> K[("Kafka<br/>64 partitions")]
-    K --> C["Kafka 컨슈머 ×8<br/>통화 ID 해시 큐"]
-    C -- "AES 암호화 저장" --> DB[("MySQL")]
-    C -- "통화 종료 시 일괄 요청" --> M["마스킹 엔진"]
-    OPS["배포 · 종료"] -. "drain API" .-> C
+    STT["STT 엔진"] --> K[("Kafka")]
+    K --> C["Kafka 컨슈머<br/>×8"]
+    C --> DB[("MySQL")]
+    C --> M["마스킹<br/>엔진"]
     class C mine
     classDef mine fill:#0969DA,stroke:#0969DA,color:#fff
 ```
 
 | 해결한 문제 | Before | After |
-|:---|:---|:---|
-| 개인정보 마스킹 정확도 | `████████░░` 80% | `██████████` **98%** |
-| 배포·종료 시 데이터 누락 | 처리 중 데이터 유실 위험 | 고객사 일일 1,000건 검수 **누락 0건** |
+|:---|:---:|:---:|
+| 개인정보 마스킹 정확도 | <img src="https://img.shields.io/badge/80%25-CF222E?style=flat-square" alt="80%"/> | <img src="https://img.shields.io/badge/98%25-2EA44F?style=flat-square" alt="98%"/> |
+| 배포·종료 시 데이터 누락 (일일 1,000건 검수) | <img src="https://img.shields.io/badge/%EC%9C%A0%EC%8B%A4_%EC%9C%84%ED%97%98-CF222E?style=flat-square" alt="유실 위험"/> | <img src="https://img.shields.io/badge/%EB%88%84%EB%9D%BD_0%EA%B1%B4-2EA44F?style=flat-square" alt="누락 0건"/> |
 
 - **Graceful Shutdown** &nbsp;리스너 단계적 정지(stop → pause → 재시도 → 진입 차단) → 내부 큐·처리 중 작업 소진 → 종료, 배포 전 drain API 제공
 - **유실 없는 커밋** &nbsp;자동 커밋을 끄고 DB 저장 성공 후에만 오프셋 커밋 &nbsp;`Manual Ack` `at-least-once`
@@ -204,22 +203,20 @@ flowchart LR
 
 ```mermaid
 flowchart LR
-    SYS["상담 시스템"] -- "분석 요청" --> P["요청 API<br/>중복 차단"]
-    P --> K1[("Kafka")]
-    K1 --> AI["AI 엔진<br/>STT · 분류 · 요약"]
-    AI --> K2[("Kafka")]
-    K2 --> C["결과 컨슈머<br/>서버 2대"]
+    SYS["상담<br/>시스템"] --> P["요청 API"]
+    P --> K[("Kafka")]
+    K --> AI["AI 엔진<br/>STT·분류·요약"]
+    AI --> C["결과<br/>컨슈머"]
     C --> DB[("MySQL")]
-    C -. "결과 누락 시 재호출" .-> AI
-    C -- "결과 전달" --> SYS
+    C -. 재호출 .-> AI
     class P,C mine
     classDef mine fill:#0969DA,stroke:#0969DA,color:#fff
 ```
 
 | 해결한 문제 | Before | After |
-|:---|:---|:---|
-| 분석 결과 누락 | `██████████` 하루 2만여 건 | `▏` **0건** |
-| 서버 간 중복 처리 | 중복 저장 · 조회 오류 | **원자적 차단** |
+|:---|:---:|:---:|
+| 분석 결과 누락 | <img src="https://img.shields.io/badge/%ED%95%98%EB%A3%A8_2%EB%A7%8C%EC%97%AC_%EA%B1%B4-CF222E?style=flat-square" alt="하루 2만여 건"/> | <img src="https://img.shields.io/badge/0%EA%B1%B4-2EA44F?style=flat-square" alt="0건"/> |
+| 서버 간 중복 처리 | <img src="https://img.shields.io/badge/%EC%A4%91%EB%B3%B5_%EC%A0%80%EC%9E%A5_%C2%B7_%EC%A1%B0%ED%9A%8C_%EC%98%A4%EB%A5%98-CF222E?style=flat-square" alt="중복 저장 · 조회 오류"/> | <img src="https://img.shields.io/badge/%EC%9B%90%EC%9E%90%EC%A0%81_%EC%B0%A8%EB%8B%A8-2EA44F?style=flat-square" alt="원자적 차단"/> |
 
 - **장애 자동 복구** &nbsp;결과가 비거나 실패로 오면 전용 스레드풀에서 분석 엔진 최대 3회 재호출, 최종 실패는 별도 로그로 격리, 누락분은 복구 앱으로 보정 &nbsp;`Retry` `ThreadPool`
 - **분산 중복 차단** &nbsp;서버 2대가 공유하는 전용 테이블에 `INSERT IGNORE`로 원자 판정, 멈춘 건은 TTL 만료 시 인계, DB 장애 시 fail-open &nbsp;`TTL` `Fail-open`
