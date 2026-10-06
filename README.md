@@ -120,7 +120,7 @@
 </td>
 </tr>
 <tr>
-<td><b>Collaboration</b></td>
+<td><b>Communication</b></td>
 <td>
 <img src="https://img.shields.io/badge/Slack-4A154B?style=flat-square&logo=slack&logoColor=white"/>
 </td>
