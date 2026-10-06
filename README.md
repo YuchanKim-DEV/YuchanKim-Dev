@@ -146,7 +146,7 @@
 
 `2026.09 ~ 진행 중` &nbsp; 콜센터 STT 솔루션 해외 법인 확장
 
-<img src="assets/project1.svg?v=20261006b" width="100%" alt="Project 1 아키텍처"/>
+<img src="assets/arch-p1-v2.svg" width="100%" alt="Project 1 아키텍처"/>
 
 - 통화 단위 배치 이벤트 구조에 맞춰 Kafka 컨슈머 재설계·개발, 테스트 환경 실데이터 검증 완료
 - 메인 담당으로 고객사 요구사항 조율 및 운영 전환 준비 중
@@ -157,7 +157,7 @@
 
 `2026.02 ~ 2026.06` &nbsp; 최대 480채널 동시 처리 · AWS
 
-<img src="assets/project2.svg?v=20261006b" width="100%" alt="Project 2 아키텍처"/>
+<img src="assets/arch-p2-v2.svg" width="100%" alt="Project 2 아키텍처"/>
 
 | 해결한 문제 | Before | After |
 |:---|:---:|:---:|
@@ -175,7 +175,7 @@
 
 `2025.12 ~ 2026.02` &nbsp; 8개 인스턴스 × 64 파티션
 
-<img src="assets/project3.svg?v=20261006b" width="100%" alt="Project 3 아키텍처"/>
+<img src="assets/arch-p3-v2.svg" width="100%" alt="Project 3 아키텍처"/>
 
 | 해결한 문제 | Before | After |
 |:---|:---:|:---:|
@@ -193,7 +193,7 @@
 
 `2025.08 ~ 2025.12` &nbsp; 서버 2대 운영
 
-<img src="assets/project4.svg?v=20261006b" width="100%" alt="Project 4 아키텍처"/>
+<img src="assets/arch-p4-v2.svg" width="100%" alt="Project 4 아키텍처"/>
 
 | 해결한 문제 | Before | After |
 |:---|:---:|:---:|
