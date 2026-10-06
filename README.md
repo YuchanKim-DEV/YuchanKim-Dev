@@ -127,12 +127,6 @@
 
 > 고객사 보안상 고객사명은 표기하지 않았습니다. 모두 **24시간 운영되는 콜센터 STT(음성인식) 솔루션** 납품 프로젝트이며, 백엔드 개발을 담당했습니다.
 
-<div align="center">
-
-<img src="https://img.shields.io/badge/%EA%B2%B0%EA%B3%BC_%EB%88%84%EB%9D%BD-%ED%95%98%EB%A3%A8_2%EB%A7%8C_%EA%B1%B4_%E2%86%92_0%EA%B1%B4-2EA44F?style=for-the-badge" alt="결과 누락 하루 2만 건 → 0건"/> <img src="https://img.shields.io/badge/%EB%A7%88%EC%8A%A4%ED%82%B9_%EC%A0%95%ED%99%95%EB%8F%84-80%25_%E2%86%92_98%25-2EA44F?style=for-the-badge" alt="마스킹 정확도 80% → 98%"/><br/>
-<img src="https://img.shields.io/badge/%EC%B2%98%EB%A6%AC_%EB%8C%80%EA%B8%B0%28LAG%29-1%EB%A7%8C_%EA%B1%B4%2B_%E2%86%92_%ED%8F%89%EC%8B%9C_0%EA%B1%B4-2EA44F?style=for-the-badge" alt="처리 대기(LAG) 1만 건+ → 평시 0건"/> <img src="https://img.shields.io/badge/%EC%97%94%EC%A7%84_%EC%B5%9C%EA%B3%A0_CPU-200%25_%E2%86%92_80%25_%EC%9D%B4%ED%95%98-2EA44F?style=for-the-badge" alt="엔진 최고 CPU 200% → 80% 이하"/> <img src="https://img.shields.io/badge/%EB%B0%B0%ED%8F%AC%C2%B7%EC%A2%85%EB%A3%8C_%EC%8B%9C_%EB%88%84%EB%9D%BD-0%EA%B1%B4-2EA44F?style=for-the-badge" alt="배포·종료 시 누락 0건"/>
-
-</div>
 
 <br/>
 
@@ -148,16 +142,7 @@
 
 `2026.02 ~ 2026.06` &nbsp; 최대 480채널 동시 처리 · AWS
 
-```mermaid
-flowchart LR
-    GW["음성 게이트웨이"] --> TCP["Netty<br/>TCP 서버"]
-    TCP -- gRPC --> STT["STT 엔진"]
-    STT --> K[("Kafka")]
-    K --> C["결과 전달<br/>컨슈머"]
-    C -- REST --> CRM["고객사<br/>시스템"]
-    class TCP,C mine
-    classDef mine fill:#0969DA,stroke:#0969DA,color:#fff
-```
+<img src="assets/project2.svg" width="100%" alt="Project 2 아키텍처"/>
 
 | 해결한 문제 | Before | After |
 |:---|:---:|:---:|
@@ -175,15 +160,7 @@ flowchart LR
 
 `2025.12 ~ 2026.02` &nbsp; 8개 인스턴스 × 64 파티션
 
-```mermaid
-flowchart LR
-    STT["STT 엔진"] --> K[("Kafka")]
-    K --> C["Kafka 컨슈머<br/>×8"]
-    C --> DB[("MySQL")]
-    C --> M["마스킹<br/>엔진"]
-    class C mine
-    classDef mine fill:#0969DA,stroke:#0969DA,color:#fff
-```
+<img src="assets/project3.svg" width="100%" alt="Project 3 아키텍처"/>
 
 | 해결한 문제 | Before | After |
 |:---|:---:|:---:|
@@ -201,17 +178,7 @@ flowchart LR
 
 `2025.08 ~ 2025.12` &nbsp; 서버 2대 운영
 
-```mermaid
-flowchart LR
-    SYS["상담<br/>시스템"] --> P["요청 API"]
-    P --> K[("Kafka")]
-    K --> AI["AI 엔진<br/>STT·분류·요약"]
-    AI --> C["결과<br/>컨슈머"]
-    C --> DB[("MySQL")]
-    C -. 재호출 .-> AI
-    class P,C mine
-    classDef mine fill:#0969DA,stroke:#0969DA,color:#fff
-```
+<img src="assets/project4.svg" width="100%" alt="Project 4 아키텍처"/>
 
 | 해결한 문제 | Before | After |
 |:---|:---:|:---:|

@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 150" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Apple SD Gothic Neo','Malgun Gothic',sans-serif">
+<defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#8B949E"/></marker></defs>
+<rect x="10.0" y="25" width="100" height="60" rx="8" fill="#30363D"/>
+<text x="60.0" y="51.5" text-anchor="middle" font-size="14" font-weight="600" fill="#FFFFFF">상담</text>
+<text x="60.0" y="68.5" text-anchor="middle" font-size="14" font-weight="600" fill="#FFFFFF">시스템</text>
+<rect x="166.0" y="25" width="100" height="60" rx="8" fill="#0969DA"/>
+<text x="216.0" y="60.0" text-anchor="middle" font-size="14" font-weight="600" fill="#FFFFFF">요청 API</text>
+<path d="M322.0,33 a50.0,8 0 0,1 100,0 v44 a50.0,8 0 0,1 -100,0 z" fill="#30363D"/>
+<ellipse cx="372.0" cy="33" rx="50.0" ry="8" fill="none" stroke="#8B949E" stroke-opacity=".6"/>
+<text x="372.0" y="64.0" text-anchor="middle" font-size="14" font-weight="600" fill="#FFFFFF">Kafka</text>
+<rect x="478.0" y="25" width="100" height="60" rx="8" fill="#30363D"/>
+<text x="528.0" y="51.5" text-anchor="middle" font-size="14" font-weight="600" fill="#FFFFFF">AI 엔진</text>
+<text x="528.0" y="68.5" text-anchor="middle" font-size="14" font-weight="600" fill="#FFFFFF">STT·분류·요약</text>
+<rect x="634.0" y="25" width="100" height="60" rx="8" fill="#0969DA"/>
+<text x="684.0" y="51.5" text-anchor="middle" font-size="14" font-weight="600" fill="#FFFFFF">결과</text>
+<text x="684.0" y="68.5" text-anchor="middle" font-size="14" font-weight="600" fill="#FFFFFF">컨슈머</text>
+<path d="M790.0,33 a50.0,8 0 0,1 100,0 v44 a50.0,8 0 0,1 -100,0 z" fill="#30363D"/>
+<ellipse cx="840.0" cy="33" rx="50.0" ry="8" fill="none" stroke="#8B949E" stroke-opacity=".6"/>
+<text x="840.0" y="64.0" text-anchor="middle" font-size="14" font-weight="600" fill="#FFFFFF">MySQL</text>
+<path d="M110.0,55.0 L162.0,55.0" fill="none" stroke="#8B949E" stroke-width="1.6" marker-end="url(#arr)"/>
+<text x="136.0" y="47.0" text-anchor="middle" font-size="12" fill="#8B949E">분석 요청</text>
+<path d="M266.0,55.0 L318.0,55.0" fill="none" stroke="#8B949E" stroke-width="1.6" marker-end="url(#arr)"/>
+<path d="M422.0,55.0 L474.0,55.0" fill="none" stroke="#8B949E" stroke-width="1.6" marker-end="url(#arr)"/>
+<path d="M578.0,55.0 L630.0,55.0" fill="none" stroke="#8B949E" stroke-width="1.6" marker-end="url(#arr)"/>
+<path d="M734.0,55.0 L786.0,55.0" fill="none" stroke="#8B949E" stroke-width="1.6" marker-end="url(#arr)"/>
+<path d="M684.0,85 C684.0,130 528.0,130 528.0,89" fill="none" stroke="#8B949E" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#arr)"/>
+<text x="606.0" y="135" text-anchor="middle" font-size="12" fill="#8B949E">결과 누락 시 재호출</text>
+<rect x="750" y="128" width="12" height="12" rx="2" fill="#0969DA"/><text x="768" y="138" font-size="12" fill="#8B949E">직접 설계·개발</text>
+</svg>
