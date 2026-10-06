@@ -187,7 +187,7 @@
 
 **핵심 구현**
 - **장애 자동 복구** — 결과가 비거나 실패로 오면 전용 스레드풀(유한 큐)에서 분석 엔진을 최대 3회 재호출, 최종 실패는 별도 로그로 격리. 누락분은 기간 단위 복구 앱으로 보정 &nbsp;`Retry` `ThreadPool`
-- **분산 중복 차단** — 서버 2대가 공유하는 전용 테이블에 `INSERT IGNORE`로 원자 판정, 처리가 멈춘 건은 TTL 만료 시 인계, DB 장애 시에는 유실보다 중복을 택하는 fail-open &nbsp;`Distributed Lock` `TTL`
+- **분산 중복 차단** — 서버 2대가 공유하는 전용 테이블에 `INSERT IGNORE`로 원자 판정, 처리가 멈춘 건은 TTL 만료 시 인계, DB 장애 시에는 유실보다 중복을 택하는 fail-open &nbsp;`INSERT IGNORE` `TTL` `Fail-open`
 - **멱등 재처리** — 재등록 요청은 기존 결과 삭제 후 재저장, 통화 정보·결과 행은 upsert로 몇 번 처리돼도 1건 유지 &nbsp;`Idempotency` `Upsert`
-- **순서 무관 완료 판정** — STT·분류·요약 결과가 어떤 순서로 도착해도, 마지막 도착 시점에 완료 처리와 음원 정리 수행 &nbsp;`Eventual Consistency`
+- **순서 무관 완료 판정** — STT·분류·요약 결과가 어떤 순서로 도착해도, 마지막 도착 시점에 완료 처리와 음원 정리 수행 &nbsp;`Order-independent`
 - **통합 테스트** — Kafka 없이 STT → 분류 → 요약 전체 흐름(정상·재등록·중복·복구)을 검증 &nbsp;`JUnit` `Integration Test`
