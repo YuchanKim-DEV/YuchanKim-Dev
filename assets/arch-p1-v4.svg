@@ -12,16 +12,17 @@
 <path d="M715.0,28 a65.0,8 0 0,1 130,0 v44 a65.0,8 0 0,1 -130,0 z" fill="none" stroke="#8B949E" stroke-width="1.3"/>
 <path d="M715.0,28 a65.0,8 0 0,0 130,0" fill="none" stroke="#8B949E" stroke-width="1.3"/>
 <text x="780.0" y="59.0" text-anchor="middle" font-size="14" font-weight="500" fill="#8B949E">MySQL</text>
-<rect x="400.0" y="150" width="140" height="50" rx="10" fill="none" stroke="#8B949E" stroke-width="1.3"/>
-<text x="470.0" y="180.0" text-anchor="middle" font-size="14" font-weight="500" fill="#8B949E">마스킹 엔진</text>
-<rect x="580.0" y="150" width="140" height="50" rx="10" fill="#388BFD" fill-opacity=".12" stroke="#388BFD" stroke-width="2"/>
-<text x="650.0" y="171.5" text-anchor="middle" font-size="14" font-weight="700" fill="#388BFD">금칙어 엔진</text>
-<text x="650.0" y="188.5" text-anchor="middle" font-size="14" font-weight="700" fill="#388BFD">(Python)</text>
+<rect x="50.0" y="150" width="140" height="50" rx="10" fill="none" stroke="#8B949E" stroke-width="1.3"/>
+<text x="120.0" y="180.0" text-anchor="middle" font-size="14" font-weight="500" fill="#8B949E">마스킹 엔진</text>
+<rect x="490.0" y="150" width="140" height="50" rx="10" fill="#388BFD" fill-opacity=".12" stroke="#388BFD" stroke-width="2"/>
+<text x="560.0" y="171.5" text-anchor="middle" font-size="14" font-weight="700" fill="#388BFD">금칙어 엔진</text>
+<text x="560.0" y="188.5" text-anchor="middle" font-size="14" font-weight="700" fill="#388BFD">(Python)</text>
 <path d="M185.0,50.0 L271.0,50.0" fill="none" stroke="#8B949E" stroke-width="1.4" marker-end="url(#arr)"/>
 <path d="M405.0,50.0 L491.0,50.0" fill="none" stroke="#8B949E" stroke-width="1.4" marker-end="url(#arr)"/>
 <path d="M625.0,50.0 L711.0,50.0" fill="none" stroke="#8B949E" stroke-width="1.4" marker-end="url(#arr)"/><text x="670.0" y="42.0" text-anchor="middle" font-size="12" fill="#8B949E">저장</text>
-<path d="M560.0,84 C560.0,110 470.0,120 470.0,146" fill="none" stroke="#8B949E" stroke-width="1.4" marker-start="url(#arr)" marker-end="url(#arr)"/>
-<path d="M560.0,84 C560.0,110 650.0,120 650.0,146" fill="none" stroke="#8B949E" stroke-width="1.4" marker-start="url(#arr)" marker-end="url(#arr)"/>
-<text x="560.0" y="128" text-anchor="middle" font-size="12" fill="#8B949E">호출 · 응답</text>
+<path d="M120.0,84 L120.0,146" fill="none" stroke="#8B949E" stroke-width="1.4" stroke-dasharray="5 4" marker-start="url(#arr)" marker-end="url(#arr)"/>
+<text x="128.0" y="119.0" text-anchor="start" font-size="12" fill="#8B949E">호출 예정</text>
+<path d="M560.0,84 L560.0,146" fill="none" stroke="#8B949E" stroke-width="1.4" marker-start="url(#arr)" marker-end="url(#arr)"/>
+<text x="568.0" y="119.0" text-anchor="start" font-size="12" fill="#8B949E">호출 · 응답</text>
 <rect x="620" y="218" width="12" height="12" rx="3" fill="#388BFD" fill-opacity=".12" stroke="#388BFD" stroke-width="1.5"/><text x="638" y="228" text-anchor="start" font-size="12" fill="#8B949E">직접 설계·개발</text><rect x="750" y="218" width="12" height="12" rx="3" fill="none" stroke="#8B949E" stroke-width="1.2"/><text x="768" y="228" text-anchor="start" font-size="12" fill="#8B949E">연동 시스템</text>
 </svg>

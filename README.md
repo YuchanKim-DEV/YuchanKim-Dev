@@ -141,7 +141,7 @@
 
 `2026.09 ~ 진행 중` &nbsp; 콜센터 STT 솔루션 해외 법인 확장
 
-<img src="assets/arch-p1-v3.svg" width="100%" alt="Project 1 아키텍처"/>
+<img src="assets/arch-p1-v4.svg" width="100%" alt="Project 1 아키텍처"/>
 
 - 통화 단위 배치 이벤트 구조에 맞춰 Kafka 컨슈머 재설계·개발, 테스트 환경 실데이터 검증 완료
 - 메인 담당으로 고객사 요구사항 조율 및 운영 전환 준비 중
