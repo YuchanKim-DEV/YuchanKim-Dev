@@ -154,11 +154,11 @@
 
 <img src="assets/arch-p2-v3.svg" width="100%" alt="Project 2 아키텍처"/>
 
-<table>
+<table width="100%">
 <tr>
-<td align="center" width="33%"><sub>STT 엔진 최고 CPU</sub><h3>200% → 80%</h3><sub>특정 서버 쏠림 해소</sub></td>
-<td align="center" width="33%"><sub>결과 전달 대기(LAG)</sub><h3>10,000+ → 0</h3><sub>평시 0건 유지</sub></td>
-<td align="center" width="33%"><sub>상담사 전환 시 대화</sub><h3>혼입 → 정상</h3><sub>순서·중복 문제 해소</sub></td>
+<td align="center" width="33%"><sub>STT&nbsp;엔진&nbsp;최고&nbsp;CPU</sub><h3>200%&nbsp;→&nbsp;80%</h3><sub>특정&nbsp;서버&nbsp;쏠림&nbsp;해소</sub></td>
+<td align="center" width="33%"><sub>결과&nbsp;전달&nbsp;대기(LAG)</sub><h3>10,000+&nbsp;→&nbsp;0</h3><sub>평시&nbsp;0건&nbsp;유지</sub></td>
+<td align="center" width="33%"><sub>상담사&nbsp;전환&nbsp;시&nbsp;대화</sub><h3>혼입&nbsp;→&nbsp;정상</h3><sub>순서·중복&nbsp;문제&nbsp;해소</sub></td>
 </tr>
 </table>
 
@@ -174,11 +174,11 @@
 
 <img src="assets/arch-p3-v3.svg" width="100%" alt="Project 3 아키텍처"/>
 
-<table>
+<table width="100%">
 <tr>
-<td align="center" width="33%"><sub>금칙어 검사 시간</sub><h3>30s → 50ms</h3><sub>약 600배 단축</sub></td>
-<td align="center" width="33%"><sub>개인정보 마스킹 정확도</sub><h3>80% → 98%</h3><sub>엔진 연동 방식 개선</sub></td>
-<td align="center" width="33%"><sub>배포·종료 시 데이터 누락</sub><h3>0건</h3><sub>고객사 일일 1,000건 검수</sub></td>
+<td align="center" width="33%"><sub>금칙어&nbsp;검사&nbsp;시간</sub><h3>30s&nbsp;→&nbsp;50ms</h3><sub>약&nbsp;600배&nbsp;단축</sub></td>
+<td align="center" width="33%"><sub>개인정보&nbsp;마스킹&nbsp;정확도</sub><h3>80%&nbsp;→&nbsp;98%</h3><sub>엔진&nbsp;연동&nbsp;방식&nbsp;개선</sub></td>
+<td align="center" width="33%"><sub>배포·종료&nbsp;시&nbsp;데이터&nbsp;누락</sub><h3>0건</h3><sub>고객사&nbsp;일일&nbsp;1,000건&nbsp;검수</sub></td>
 </tr>
 </table>
 
@@ -194,11 +194,11 @@
 
 <img src="assets/arch-p4-v5.svg" width="100%" alt="Project 4 아키텍처"/>
 
-<table>
+<table width="100%">
 <tr>
-<td align="center" width="33%"><sub>분석 결과 누락</sub><h3>20,000 → 0</h3><sub>하루 2만여 건 장애 이후</sub></td>
-<td align="center" width="33%"><sub>서버 간 중복 처리</sub><h3>원자적 차단</h3><sub>운영 테이블 무변경</sub></td>
-<td align="center" width="33%"><sub>상담사·고객 화자 구분</sub><h3>85% → 90%</h3><sub>운영 중 직접 발견·개선</sub></td>
+<td align="center" width="33%"><sub>분석&nbsp;결과&nbsp;누락</sub><h3>20,000&nbsp;→&nbsp;0</h3><sub>하루&nbsp;2만여&nbsp;건&nbsp;장애&nbsp;이후</sub></td>
+<td align="center" width="33%"><sub>서버&nbsp;간&nbsp;중복&nbsp;처리</sub><h3>원자적 차단</h3><sub>운영&nbsp;테이블&nbsp;무변경</sub></td>
+<td align="center" width="33%"><sub>상담사·고객&nbsp;화자&nbsp;구분</sub><h3>85%&nbsp;→&nbsp;90%</h3><sub>운영&nbsp;중&nbsp;직접&nbsp;발견·개선</sub></td>
 </tr>
 </table>
 
