@@ -154,13 +154,7 @@
 
 <img src="assets/arch-p2-v3.svg" width="100%" alt="Project 2 아키텍처"/>
 
-<table width="100%">
-<tr>
-<td align="center" width="33%"><sub>STT&nbsp;엔진&nbsp;최고&nbsp;CPU</sub><h3>200%&nbsp;→&nbsp;80%</h3><sub>특정&nbsp;서버&nbsp;쏠림&nbsp;해소</sub></td>
-<td align="center" width="33%"><sub>결과&nbsp;전달&nbsp;대기(LAG)</sub><h3>10,000+&nbsp;→&nbsp;0</h3><sub>평시&nbsp;0건&nbsp;유지</sub></td>
-<td align="center" width="33%"><sub>상담사&nbsp;전환&nbsp;시&nbsp;대화</sub><h3>혼입&nbsp;→&nbsp;정상</h3><sub>순서·중복&nbsp;문제&nbsp;해소</sub></td>
-</tr>
-</table>
+<img src="assets/kpi-p2.svg" width="100%" alt="Project 2 핵심 성과"/>
 
 1. **엔진 부하 쏠림** — gRPC는 연결 하나를 오래 재사용하고 L4 로드밸런서는 연결 단위로만 분산해, 한 서버에 통화가 몰림 → 채널 풀 + 주기적 연결 회전(진행 중 통화 유지)으로 재분산 &nbsp;`gRPC` `Netty`
 2. **결과 전달 지연** — 동기 호출의 처리량 한계, 끊긴 연결 재사용 오류, 새벽 유휴 연결 끊김이 겹침 → WebClient 비동기 전환, 동시 요청 제한, 연결 오류만 백오프 재시도, keepalive 설정 &nbsp;`WebClient` `at-least-once`
@@ -174,13 +168,7 @@
 
 <img src="assets/arch-p3-v3.svg" width="100%" alt="Project 3 아키텍처"/>
 
-<table width="100%">
-<tr>
-<td align="center" width="33%"><sub>금칙어&nbsp;검사&nbsp;시간</sub><h3>30s&nbsp;→&nbsp;50ms</h3><sub>약&nbsp;600배&nbsp;단축</sub></td>
-<td align="center" width="33%"><sub>개인정보&nbsp;마스킹&nbsp;정확도</sub><h3>80%&nbsp;→&nbsp;98%</h3><sub>엔진&nbsp;연동&nbsp;방식&nbsp;개선</sub></td>
-<td align="center" width="33%"><sub>배포·종료&nbsp;시&nbsp;데이터&nbsp;누락</sub><h3>0건</h3><sub>고객사&nbsp;일일&nbsp;1,000건&nbsp;검수</sub></td>
-</tr>
-</table>
+<img src="assets/kpi-p3.svg" width="100%" alt="Project 3 핵심 성과"/>
 
 1. **금칙어 검사 지연으로 LAG 누적** — 직접 개발한 금칙어 엔진(Python)이 호출마다 키워드 100만 건으로 Aho-Corasick 오토마톤을 새로 생성해 건당 30초 소요 → 오토마톤을 메모리에 캐시해 재사용, **50ms**로 단축하고 LAG 해소 &nbsp;`Python` `Aho-Corasick` `Cache`
 2. **마스킹 정확도 80%** — 문맥으로 판단하는 NLU 엔진에 문장을 하나씩 보내 여러 문장에 걸친 개인정보를 놓침 → 통화 종료 시 통화 단위로 일괄 요청 후 문장별 재분할·일괄 업데이트 &nbsp;`Batch Update`
@@ -194,13 +182,7 @@
 
 <img src="assets/arch-p4-v5.svg" width="100%" alt="Project 4 아키텍처"/>
 
-<table width="100%">
-<tr>
-<td align="center" width="33%"><sub>분석&nbsp;결과&nbsp;누락</sub><h3>20,000&nbsp;→&nbsp;0</h3><sub>하루&nbsp;2만여&nbsp;건&nbsp;장애&nbsp;이후</sub></td>
-<td align="center" width="33%"><sub>서버&nbsp;간&nbsp;중복&nbsp;처리</sub><h3>원자적 차단</h3><sub>운영&nbsp;테이블&nbsp;무변경</sub></td>
-<td align="center" width="33%"><sub>상담사·고객&nbsp;화자&nbsp;구분</sub><h3>85%&nbsp;→&nbsp;90%</h3><sub>운영&nbsp;중&nbsp;직접&nbsp;발견·개선</sub></td>
-</tr>
-</table>
+<img src="assets/kpi-p4.svg" width="100%" alt="Project 4 핵심 성과"/>
 
 1. **하루 2만여 건 결과 누락 장애** — 다른 파트에서 전달할 분류·요약 결과가 주기적으로 누락 → 복구 앱으로 누락분을 채우고, 빈 값·오류 수신 시 엔진을 직접 재호출하는 실시간 재시도로 재발 차단 &nbsp;`Retry` `ThreadPool`
 2. **서버 2대 환경의 중복 처리** — 상담사 수동 재요청과 서버 간 메모리 미공유로 같은 통화가 중복 처리됨 → 락 위험이 있는 운영 테이블 인덱스 대신 전용 테이블 + `INSERT IGNORE`로 원자 판정, TTL 인계, fail-open &nbsp;`Idempotency`

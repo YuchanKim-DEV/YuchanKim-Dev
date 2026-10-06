@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 120" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Apple SD Gothic Neo','Malgun Gothic',sans-serif">
+<rect x="1.0" y="1" width="287.3333333333333" height="118" rx="12" fill="#388BFD" fill-opacity=".06" stroke="#8B949E" stroke-opacity=".5" stroke-width="1.2"/>
+<text x="144.66666666666666" y="30" text-anchor="middle" font-size="13" fill="#8B949E">분석 결과 누락</text>
+<text x="144.66666666666666" y="72" text-anchor="middle" font-size="28" font-weight="700" fill="#388BFD">20,000 → 0</text>
+<text x="144.66666666666666" y="100" text-anchor="middle" font-size="12" fill="#8B949E">하루 2만여 건 장애 이후</text>
+<rect x="306.3333333333333" y="1" width="287.3333333333333" height="118" rx="12" fill="#388BFD" fill-opacity=".06" stroke="#8B949E" stroke-opacity=".5" stroke-width="1.2"/>
+<text x="450.0" y="30" text-anchor="middle" font-size="13" fill="#8B949E">서버 간 중복 처리</text>
+<text x="450.0" y="72" text-anchor="middle" font-size="28" font-weight="700" fill="#388BFD">원자적 차단</text>
+<text x="450.0" y="100" text-anchor="middle" font-size="12" fill="#8B949E">운영 테이블 무변경</text>
+<rect x="611.6666666666666" y="1" width="287.3333333333333" height="118" rx="12" fill="#388BFD" fill-opacity=".06" stroke="#8B949E" stroke-opacity=".5" stroke-width="1.2"/>
+<text x="755.3333333333333" y="30" text-anchor="middle" font-size="13" fill="#8B949E">상담사·고객 화자 구분</text>
+<text x="755.3333333333333" y="72" text-anchor="middle" font-size="28" font-weight="700" fill="#388BFD">85% → 90%</text>
+<text x="755.3333333333333" y="100" text-anchor="middle" font-size="12" fill="#8B949E">운영 중 직접 발견·개선</text>
+</svg>

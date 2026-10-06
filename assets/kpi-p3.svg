@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 120" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Apple SD Gothic Neo','Malgun Gothic',sans-serif">
+<rect x="1.0" y="1" width="287.3333333333333" height="118" rx="12" fill="#388BFD" fill-opacity=".06" stroke="#8B949E" stroke-opacity=".5" stroke-width="1.2"/>
+<text x="144.66666666666666" y="30" text-anchor="middle" font-size="13" fill="#8B949E">금칙어 검사 시간</text>
+<text x="144.66666666666666" y="72" text-anchor="middle" font-size="28" font-weight="700" fill="#388BFD">30s → 50ms</text>
+<text x="144.66666666666666" y="100" text-anchor="middle" font-size="12" fill="#8B949E">약 600배 단축</text>
+<rect x="306.3333333333333" y="1" width="287.3333333333333" height="118" rx="12" fill="#388BFD" fill-opacity=".06" stroke="#8B949E" stroke-opacity=".5" stroke-width="1.2"/>
+<text x="450.0" y="30" text-anchor="middle" font-size="13" fill="#8B949E">개인정보 마스킹 정확도</text>
+<text x="450.0" y="72" text-anchor="middle" font-size="28" font-weight="700" fill="#388BFD">80% → 98%</text>
+<text x="450.0" y="100" text-anchor="middle" font-size="12" fill="#8B949E">엔진 연동 방식 개선</text>
+<rect x="611.6666666666666" y="1" width="287.3333333333333" height="118" rx="12" fill="#388BFD" fill-opacity=".06" stroke="#8B949E" stroke-opacity=".5" stroke-width="1.2"/>
+<text x="755.3333333333333" y="30" text-anchor="middle" font-size="13" fill="#8B949E">배포·종료 시 데이터 누락</text>
+<text x="755.3333333333333" y="72" text-anchor="middle" font-size="28" font-weight="700" fill="#388BFD">0건</text>
+<text x="755.3333333333333" y="100" text-anchor="middle" font-size="12" fill="#8B949E">고객사 일일 1,000건 검수</text>
+</svg>
