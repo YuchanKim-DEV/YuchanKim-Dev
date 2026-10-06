@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 130" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Apple SD Gothic Neo','Malgun Gothic',sans-serif">
+<defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#8B949E"/></marker></defs>
+<rect x="10.0" y="30" width="100" height="60" rx="10" fill="none" stroke="#8B949E" stroke-width="1.3"/>
+<text x="60.0" y="56.5" text-anchor="middle" font-size="14" font-weight="500" fill="#8B949E">음성</text>
+<text x="60.0" y="73.5" text-anchor="middle" font-size="14" font-weight="500" fill="#8B949E">게이트웨이</text>
+<rect x="166.0" y="30" width="100" height="60" rx="10" fill="#388BFD" fill-opacity=".12" stroke="#388BFD" stroke-width="2"/>
+<text x="216.0" y="56.5" text-anchor="middle" font-size="14" font-weight="700" fill="#388BFD">Netty</text>
+<text x="216.0" y="73.5" text-anchor="middle" font-size="14" font-weight="700" fill="#388BFD">TCP 서버</text>
+<rect x="322.0" y="30" width="100" height="60" rx="10" fill="none" stroke="#8B949E" stroke-width="1.3"/>
+<text x="372.0" y="65.0" text-anchor="middle" font-size="14" font-weight="500" fill="#8B949E">STT 엔진</text>
+<path d="M478.0,38 a50.0,8 0 0,1 100,0 v44 a50.0,8 0 0,1 -100,0 z" fill="none" stroke="#8B949E" stroke-width="1.3"/>
+<path d="M478.0,38 a50.0,8 0 0,0 100,0" fill="none" stroke="#8B949E" stroke-width="1.3"/>
+<text x="528.0" y="69.0" text-anchor="middle" font-size="14" font-weight="500" fill="#8B949E">Kafka</text>
+<rect x="634.0" y="30" width="100" height="60" rx="10" fill="#388BFD" fill-opacity=".12" stroke="#388BFD" stroke-width="2"/>
+<text x="684.0" y="56.5" text-anchor="middle" font-size="14" font-weight="700" fill="#388BFD">결과 전달</text>
+<text x="684.0" y="73.5" text-anchor="middle" font-size="14" font-weight="700" fill="#388BFD">컨슈머</text>
+<rect x="790.0" y="30" width="100" height="60" rx="10" fill="none" stroke="#8B949E" stroke-width="1.3"/>
+<text x="840.0" y="56.5" text-anchor="middle" font-size="14" font-weight="500" fill="#8B949E">고객사</text>
+<text x="840.0" y="73.5" text-anchor="middle" font-size="14" font-weight="500" fill="#8B949E">시스템</text>
+<path d="M110.0,60.0 L162.0,60.0" fill="none" stroke="#8B949E" stroke-width="1.4" marker-end="url(#arr)"/><text x="138.0" y="52.0" text-anchor="middle" font-size="12" fill="#8B949E">음성</text>
+<path d="M266.0,60.0 L318.0,60.0" fill="none" stroke="#8B949E" stroke-width="1.4" marker-end="url(#arr)"/><text x="294.0" y="52.0" text-anchor="middle" font-size="12" fill="#8B949E">gRPC</text>
+<path d="M422.0,60.0 L474.0,60.0" fill="none" stroke="#8B949E" stroke-width="1.4" marker-end="url(#arr)"/>
+<path d="M578.0,60.0 L630.0,60.0" fill="none" stroke="#8B949E" stroke-width="1.4" marker-end="url(#arr)"/>
+<path d="M734.0,60.0 L786.0,60.0" fill="none" stroke="#8B949E" stroke-width="1.4" marker-end="url(#arr)"/><text x="762.0" y="52.0" text-anchor="middle" font-size="12" fill="#8B949E">REST</text>
+<rect x="620" y="108" width="12" height="12" rx="3" fill="#388BFD" fill-opacity=".12" stroke="#388BFD" stroke-width="1.5"/><text x="638" y="118" text-anchor="start" font-size="12" fill="#8B949E">직접 설계·개발</text><rect x="750" y="108" width="12" height="12" rx="3" fill="none" stroke="#8B949E" stroke-width="1.2"/><text x="768" y="118" text-anchor="start" font-size="12" fill="#8B949E">연동 시스템</text>
+</svg>

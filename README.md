@@ -137,16 +137,11 @@
 
 ## 💼 Projects
 
-> 고객사 보안상 고객사명은 표기하지 않았습니다. 모두 **24시간 운영되는 콜센터 STT(음성인식) 솔루션** 납품 프로젝트이며, 백엔드 개발을 담당했습니다.
-
-
-<br/>
-
 ### Project 1 · 해외 콜센터 STT 서비스 확장 &nbsp;|&nbsp; 메인 담당 · 백엔드
 
 `2026.09 ~ 진행 중` &nbsp; 콜센터 STT 솔루션 해외 법인 확장
 
-<img src="assets/arch-p1-v2.svg" width="100%" alt="Project 1 아키텍처"/>
+<img src="assets/arch-p1-v3.svg" width="100%" alt="Project 1 아키텍처"/>
 
 - 통화 단위 배치 이벤트 구조에 맞춰 Kafka 컨슈머 재설계·개발, 테스트 환경 실데이터 검증 완료
 - 메인 담당으로 고객사 요구사항 조율 및 운영 전환 준비 중
@@ -157,35 +152,39 @@
 
 `2026.02 ~ 2026.06` &nbsp; 최대 480채널 동시 처리 · AWS
 
-<img src="assets/arch-p2-v2.svg" width="100%" alt="Project 2 아키텍처"/>
+<img src="assets/arch-p2-v3.svg" width="100%" alt="Project 2 아키텍처"/>
 
-| 해결한 문제 | Before | After |
-|:---|:---:|:---:|
-| STT 엔진 부하 쏠림 (최고 CPU) | <img src="https://img.shields.io/badge/200%25-CF222E?style=flat-square" alt="200%"/> | <img src="https://img.shields.io/badge/80%25_%EC%9D%B4%ED%95%98-2EA44F?style=flat-square" alt="80% 이하"/> |
-| 결과 전달 지연 (처리 대기) | <img src="https://img.shields.io/badge/1%EB%A7%8C_%EA%B1%B4%2B-CF222E?style=flat-square" alt="1만 건+"/> | <img src="https://img.shields.io/badge/%ED%8F%89%EC%8B%9C_0%EA%B1%B4-2EA44F?style=flat-square" alt="평시 0건"/> |
+<table>
+<tr>
+<td align="center" width="33%"><sub>STT 엔진 최고 CPU</sub><h3>200% → 80%</h3><sub>특정 서버 쏠림 해소</sub></td>
+<td align="center" width="33%"><sub>결과 전달 대기(LAG)</sub><h3>10,000+ → 0</h3><sub>평시 0건 유지</sub></td>
+<td align="center" width="33%"><sub>상담사 전환 시 대화</sub><h3>혼입 → 정상</h3><sub>순서·중복 문제 해소</sub></td>
+</tr>
+</table>
 
-- **부하 분산** &nbsp;gRPC 장기 연결이 로드밸런서 뒤 한 서버에 고정되는 원인을 찾아, 채널 풀 + 주기적 연결 회전으로 재분산 (진행 중 통화는 유지) &nbsp;`gRPC` `Semaphore`
-- **TCP 서버** &nbsp;바이너리 프로토콜 파싱, 통화·채널 단위 큐로 순서를 지키며 병렬 처리, 큐 포화 시 읽기를 멈추는 백프레셔 &nbsp;`Netty` `Backpressure`
-- **비동기 전달** &nbsp;동기 호출 → WebClient 비동기, 큐별 동시 요청 제한, 연결 오류만 지수 백오프 재시도, 성공 시에만 커밋 &nbsp;`WebClient` `at-least-once`
-- **순서 보정** &nbsp;상담사 전환 시 문장 번호를 통화·상담사·채널 단위로 재발번, 중복 시작 이벤트 제거 &nbsp;`Message Ordering`
+1. **엔진 부하 쏠림** — gRPC는 연결 하나를 오래 재사용하고 L4 로드밸런서는 연결 단위로만 분산해, 한 서버에 통화가 몰림 → 채널 풀 + 주기적 연결 회전(진행 중 통화 유지)으로 재분산 &nbsp;`gRPC` `Netty`
+2. **결과 전달 지연** — 동기 호출의 처리량 한계, 끊긴 연결 재사용 오류, 새벽 유휴 연결 끊김이 겹침 → WebClient 비동기 전환, 동시 요청 제한, 연결 오류만 백오프 재시도, keepalive 설정 &nbsp;`WebClient` `at-least-once`
+3. **상담사 전환 시 대화 섞임** — 전환 시 재연결로 문장 번호가 어긋나 순서 뒤섞임·이전 상담사 대화 혼입·중복 거절 발생 → 통화·상담사·채널 단위로 번호 재발번, 같은 통화는 한 워커가 순서대로 처리 &nbsp;`Message Ordering`
 
 <br/>
 
 ### Project 3 · 실시간 상담 STT 수집 플랫폼 &nbsp;|&nbsp; 백엔드 개발·운영
 
-`2025.12 ~ 2026.02` &nbsp; 8개 인스턴스 × 64 파티션
+`2025.12 ~ 2026.02` &nbsp; 8개 인스턴스 × 64 파티션 · 금칙어 엔진 직접 개발
 
-<img src="assets/arch-p3-v2.svg" width="100%" alt="Project 3 아키텍처"/>
+<img src="assets/arch-p3-v3.svg" width="100%" alt="Project 3 아키텍처"/>
 
-| 해결한 문제 | Before | After |
-|:---|:---:|:---:|
-| 개인정보 마스킹 정확도 | <img src="https://img.shields.io/badge/80%25-CF222E?style=flat-square" alt="80%"/> | <img src="https://img.shields.io/badge/98%25-2EA44F?style=flat-square" alt="98%"/> |
-| 배포·종료 시 데이터 누락 (일일 1,000건 검수) | <img src="https://img.shields.io/badge/%EC%9C%A0%EC%8B%A4_%EC%9C%84%ED%97%98-CF222E?style=flat-square" alt="유실 위험"/> | <img src="https://img.shields.io/badge/%EB%88%84%EB%9D%BD_0%EA%B1%B4-2EA44F?style=flat-square" alt="누락 0건"/> |
+<table>
+<tr>
+<td align="center" width="33%"><sub>금칙어 검사 시간</sub><h3>30s → 50ms</h3><sub>약 600배 단축</sub></td>
+<td align="center" width="33%"><sub>개인정보 마스킹 정확도</sub><h3>80% → 98%</h3><sub>엔진 연동 방식 개선</sub></td>
+<td align="center" width="33%"><sub>배포·종료 시 데이터 누락</sub><h3>0건</h3><sub>고객사 일일 1,000건 검수</sub></td>
+</tr>
+</table>
 
-- **Graceful Shutdown** &nbsp;리스너 단계적 정지(stop → pause → 재시도 → 진입 차단) → 내부 큐·처리 중 작업 소진 → 종료, 배포 전 drain API 제공
-- **유실 없는 커밋** &nbsp;자동 커밋을 끄고 DB 저장 성공 후에만 오프셋 커밋 &nbsp;`Manual Ack` `at-least-once`
-- **순서 보장 + 병렬 처리** &nbsp;파티션 고정 워커 → 통화 ID 해시 큐로 바꿔 같은 통화는 한 워커가 순서대로 처리 &nbsp;`Concurrency`
-- **마스킹 연동 개선** &nbsp;문장 단위 호출 → 통화 단위 일괄 호출 + 일괄 업데이트, 통화 정보는 upsert로 멱등 저장 &nbsp;`Batch Update` `Idempotency`
+1. **금칙어 검사 지연으로 LAG 누적** — 직접 개발한 금칙어 엔진(Python)이 호출마다 키워드 100만 건으로 Aho-Corasick 오토마톤을 새로 생성해 건당 30초 소요 → 오토마톤을 메모리에 캐시해 재사용, **50ms**로 단축하고 LAG 해소 &nbsp;`Python` `Aho-Corasick` `Cache`
+2. **마스킹 정확도 80%** — 문맥으로 판단하는 NLU 엔진에 문장을 하나씩 보내 여러 문장에 걸친 개인정보를 놓침 → 통화 종료 시 통화 단위로 일괄 요청 후 문장별 재분할·일괄 업데이트 &nbsp;`Batch Update`
+3. **24시간 서비스의 배포·종료 시 유실 위험** — 리스너 단계적 정지 → 내부 큐·처리 중 작업 소진 → 종료하는 Graceful Shutdown 설계, DB 저장 성공 후에만 오프셋 커밋 &nbsp;`Graceful Shutdown` `Manual Ack`
 
 <br/>
 
@@ -193,14 +192,16 @@
 
 `2025.08 ~ 2025.12` &nbsp; 서버 2대 운영
 
-<img src="assets/arch-p4-v4.svg" width="100%" alt="Project 4 아키텍처"/>
+<img src="assets/arch-p4-v5.svg" width="100%" alt="Project 4 아키텍처"/>
 
-| 해결한 문제 | Before | After |
-|:---|:---:|:---:|
-| 분석 결과 누락 | <img src="https://img.shields.io/badge/%ED%95%98%EB%A3%A8_2%EB%A7%8C%EC%97%AC_%EA%B1%B4-CF222E?style=flat-square" alt="하루 2만여 건"/> | <img src="https://img.shields.io/badge/0%EA%B1%B4-2EA44F?style=flat-square" alt="0건"/> |
-| 서버 간 중복 처리 | <img src="https://img.shields.io/badge/%EC%A4%91%EB%B3%B5_%EC%A0%80%EC%9E%A5_%C2%B7_%EC%A1%B0%ED%9A%8C_%EC%98%A4%EB%A5%98-CF222E?style=flat-square" alt="중복 저장 · 조회 오류"/> | <img src="https://img.shields.io/badge/%EC%9B%90%EC%9E%90%EC%A0%81_%EC%B0%A8%EB%8B%A8-2EA44F?style=flat-square" alt="원자적 차단"/> |
+<table>
+<tr>
+<td align="center" width="33%"><sub>분석 결과 누락</sub><h3>20,000 → 0</h3><sub>하루 2만여 건 장애 이후</sub></td>
+<td align="center" width="33%"><sub>서버 간 중복 처리</sub><h3>원자적 차단</h3><sub>운영 테이블 무변경</sub></td>
+<td align="center" width="33%"><sub>상담사·고객 화자 구분</sub><h3>85% → 90%</h3><sub>운영 중 직접 발견·개선</sub></td>
+</tr>
+</table>
 
-- **장애 자동 복구** &nbsp;결과가 비거나 실패로 오면 전용 스레드풀에서 분석 엔진 최대 3회 재호출, 최종 실패는 별도 로그로 격리, 누락분은 복구 앱으로 보정 &nbsp;`Retry` `ThreadPool`
-- **분산 중복 차단** &nbsp;서버 2대가 공유하는 전용 테이블에 `INSERT IGNORE`로 원자 판정, 멈춘 건은 TTL 만료 시 인계, DB 장애 시 fail-open &nbsp;`TTL` `Fail-open`
-- **멱등 재처리** &nbsp;재등록 요청은 기존 결과 삭제 후 재저장, 통화 정보·결과는 upsert로 1건 유지 &nbsp;`Idempotency`
-- **순서 무관 완료 판정** &nbsp;STT·분류·요약이 어떤 순서로 도착해도 마지막 도착 시점에 완료 처리, Kafka 없이 전체 흐름을 검증하는 통합 테스트 작성 &nbsp;`Integration Test`
+1. **하루 2만여 건 결과 누락 장애** — 다른 파트에서 전달할 분류·요약 결과가 주기적으로 누락 → 복구 앱으로 누락분을 채우고, 빈 값·오류 수신 시 엔진을 직접 재호출하는 실시간 재시도로 재발 차단 &nbsp;`Retry` `ThreadPool`
+2. **서버 2대 환경의 중복 처리** — 상담사 수동 재요청과 서버 간 메모리 미공유로 같은 통화가 중복 처리됨 → 락 위험이 있는 운영 테이블 인덱스 대신 전용 테이블 + `INSERT IGNORE`로 원자 판정, TTL 인계, fail-open &nbsp;`Idempotency`
+3. **모든 대화가 상담사로 저장되는 버그** — 엔진의 화자 표기 형식 불일치와 동수 판정 결함 → 표기 정규화, 발화 수 비교 제거, 상담사 확정 멘트 보정 &nbsp;`Data Quality`
