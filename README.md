@@ -1,3 +1,5 @@
+<p align="left"><img src="https://komarev.com/ghpvc/?username=YuchanKim-DEV&style=flat-square&color=8B949E&label=Profile+Views"/></p>
+
 <div align="center">
 
 # 김유찬 · Yuchan Kim
@@ -120,24 +122,3 @@
 </td>
 </tr>
 </table>
-
-<br/>
-
-## 📊 GitHub
-
-<div align="center">
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-streak-stats.herokuapp.com/?user=YuchanKim-DEV&hide_border=true&disable_animations=true&background=0D1117&ring=58A6FF&fire=58A6FF&currStreakLabel=58A6FF&sideNums=C9D1D9&currStreakNum=C9D1D9&dates=8B949E&sideLabels=8B949E"/>
-  <img width="495" src="https://github-readme-streak-stats.herokuapp.com/?user=YuchanKim-DEV&hide_border=true&disable_animations=true&background=FFFFFF&ring=0969DA&fire=0969DA&currStreakLabel=0969DA&sideNums=24292F&currStreakNum=24292F" alt="GitHub Streak"/>
-</picture>
-
-</div>
-
-<br/>
-
-<div align="center">
-
-<img src="https://komarev.com/ghpvc/?username=YuchanKim-DEV&style=flat-square&color=8B949E&label=Profile+Views"/>
-
-</div>
