@@ -127,6 +127,15 @@
 
 > 고객사 보안상 고객사명은 표기하지 않았습니다. 모두 **24시간 운영되는 콜센터 STT(음성인식) 솔루션** 납품 프로젝트이며, 백엔드 개발을 담당했습니다.
 
+<div align="center">
+
+<img src="https://img.shields.io/badge/%EA%B2%B0%EA%B3%BC_%EB%88%84%EB%9D%BD-%ED%95%98%EB%A3%A8_2%EB%A7%8C_%EA%B1%B4_%E2%86%92_0%EA%B1%B4-2EA44F?style=for-the-badge" alt="결과 누락 하루 2만 건 → 0건"/> <img src="https://img.shields.io/badge/%EB%A7%88%EC%8A%A4%ED%82%B9_%EC%A0%95%ED%99%95%EB%8F%84-80%25_%E2%86%92_98%25-2EA44F?style=for-the-badge" alt="마스킹 정확도 80% → 98%"/><br/>
+<img src="https://img.shields.io/badge/%EC%B2%98%EB%A6%AC_%EB%8C%80%EA%B8%B0%28LAG%29-1%EB%A7%8C_%EA%B1%B4%2B_%E2%86%92_%ED%8F%89%EC%8B%9C_0%EA%B1%B4-2EA44F?style=for-the-badge" alt="처리 대기(LAG) 1만 건+ → 평시 0건"/> <img src="https://img.shields.io/badge/%EC%97%94%EC%A7%84_%EC%B5%9C%EA%B3%A0_CPU-200%25_%E2%86%92_80%25_%EC%9D%B4%ED%95%98-2EA44F?style=for-the-badge" alt="엔진 최고 CPU 200% → 80% 이하"/> <img src="https://img.shields.io/badge/%EB%B0%B0%ED%8F%AC%C2%B7%EC%A2%85%EB%A3%8C_%EC%8B%9C_%EB%88%84%EB%9D%BD-0%EA%B1%B4-2EA44F?style=for-the-badge" alt="배포·종료 시 누락 0건"/>
+
+</div>
+
+<br/>
+
 ### Project 1 · 해외 콜센터 STT 서비스 확장 &nbsp;|&nbsp; 메인 담당 · 백엔드
 
 `2026.09 ~ 진행 중` &nbsp; 콜센터 STT 솔루션 해외 법인 확장
@@ -137,57 +146,82 @@
 
 ### Project 2 · 실시간 상담 음성 스트리밍 STT 연동 시스템 &nbsp;|&nbsp; 백엔드 설계·개발
 
-`2026.02 ~ 2026.06` &nbsp; 실시간 상담 음성 수신 TCP 서버 · STT 결과 전달 컨슈머 · 최대 480채널 · AWS
+`2026.02 ~ 2026.06` &nbsp; 최대 480채널 동시 처리 · AWS
 
-**역할** &nbsp;Netty 기반 TCP 서버와 Kafka 컨슈머 설계·개발, AWS 운영 배포
+```mermaid
+flowchart LR
+    GW["음성 게이트웨이"] -- "TCP 음성 스트림" --> TCP["Netty TCP 서버"]
+    TCP -- "gRPC Streaming<br/>채널 풀 · 연결 회전" --> STT["STT 엔진<br/>(로드밸런서 뒤 다중 서버)"]
+    STT -- "인식 결과" --> K[("Kafka")]
+    K --> C["결과 전달 컨슈머<br/>WebClient 비동기"]
+    C -- "REST · OAuth2" --> CRM["고객사 시스템"]
+    class TCP,C mine
+    classDef mine fill:#0969DA,stroke:#0969DA,color:#fff
+```
 
 | 해결한 문제 | Before | After |
-|:---|:---:|:---:|
-| STT 엔진 부하 쏠림 | CPU **200%** | CPU **80% 이하** |
-| 결과 전달 지연 | 처리 대기 **1만 건+** | 평시 **0건** |
+|:---|:---|:---|
+| STT 엔진 부하 쏠림 (최고 CPU) | `██████████` 200% | `████` **80% 이하** |
+| 결과 전달 지연 (처리 대기) | `██████████` 1만 건+ | `▏` **평시 0건** |
 
-**핵심 구현**
-- **TCP 서버** — 바이너리 프로토콜 프레이밍·파싱, 통화·채널 단위 큐로 순서를 지키며 병렬 처리, 큐 포화 시 소켓 읽기를 멈추는 백프레셔 &nbsp;`Netty` `Backpressure`
-- **gRPC 부하 분산** — 채널 풀 + 주기적 연결 회전(진행 중 통화는 끝까지 유지)으로 L4 로드밸런서 뒤 특정 서버 쏠림 해소, 동시 스트림 480개 제한 &nbsp;`gRPC Streaming` `Semaphore`
-- **비동기 전달** — 동기 호출을 WebClient 비동기로 전환, 큐별 동시 요청 수 제한, 연결 오류만 지수 백오프 재시도, 전송 성공 시에만 커밋 &nbsp;`WebClient` `Retry` `at-least-once`
-- **순서·중복 보정** — 상담사 전환으로 재연결될 때 문장 번호를 통화·상담사·채널 단위로 재발번하고 중복 시작 이벤트 제거 &nbsp;`Message Ordering`
+- **부하 분산** &nbsp;gRPC 장기 연결이 로드밸런서 뒤 한 서버에 고정되는 원인을 찾아, 채널 풀 + 주기적 연결 회전으로 재분산 (진행 중 통화는 유지) &nbsp;`gRPC` `Semaphore`
+- **TCP 서버** &nbsp;바이너리 프로토콜 파싱, 통화·채널 단위 큐로 순서를 지키며 병렬 처리, 큐 포화 시 읽기를 멈추는 백프레셔 &nbsp;`Netty` `Backpressure`
+- **비동기 전달** &nbsp;동기 호출 → WebClient 비동기, 큐별 동시 요청 제한, 연결 오류만 지수 백오프 재시도, 성공 시에만 커밋 &nbsp;`WebClient` `at-least-once`
+- **순서 보정** &nbsp;상담사 전환 시 문장 번호를 통화·상담사·채널 단위로 재발번, 중복 시작 이벤트 제거 &nbsp;`Message Ordering`
 
 <br/>
 
 ### Project 3 · 실시간 상담 STT 수집 플랫폼 &nbsp;|&nbsp; 백엔드 개발·운영
 
-`2025.12 ~ 2026.02` &nbsp; 실시간 상담 STT 결과 수집 · 8개 인스턴스 × 64 파티션
+`2025.12 ~ 2026.02` &nbsp; 8개 인스턴스 × 64 파티션
 
-**역할** &nbsp;Spring Boot 기반 Kafka 컨슈머 설계·개발 및 운영
+```mermaid
+flowchart LR
+    STT["STT 엔진"] -- "Open · Final · Close" --> K[("Kafka<br/>64 partitions")]
+    K --> C["Kafka 컨슈머 ×8<br/>통화 ID 해시 큐"]
+    C -- "AES 암호화 저장" --> DB[("MySQL")]
+    C -- "통화 종료 시 일괄 요청" --> M["마스킹 엔진"]
+    OPS["배포 · 종료"] -. "drain API" .-> C
+    class C mine
+    classDef mine fill:#0969DA,stroke:#0969DA,color:#fff
+```
 
 | 해결한 문제 | Before | After |
-|:---|:---:|:---:|
-| 배포·종료 시 데이터 유실 위험 | 처리 중 데이터 유실 가능 | 누락 문의 **0건** |
-| 개인정보 마스킹 정확도 | **80%** | **98%** |
+|:---|:---|:---|
+| 개인정보 마스킹 정확도 | `████████░░` 80% | `██████████` **98%** |
+| 배포·종료 시 데이터 누락 | 처리 중 데이터 유실 위험 | 고객사 일일 1,000건 검수 **누락 0건** |
 
-**핵심 구현**
-- **Graceful Shutdown** — 리스너 단계적 정지(stop → pause → 재시도 → 진입 차단) → 내부 큐·처리 중 작업 소진 → 워커 종료. 배포 전 호출하는 drain API 제공 &nbsp;`Graceful Shutdown`
-- **유실 없는 커밋** — 자동 커밋을 끄고 DB 저장 성공 후에만 오프셋 커밋, 중간 장애 시 재기동 후 재처리 &nbsp;`Manual Ack` `at-least-once`
-- **순서 보장 + 병렬 처리** — 파티션 고정 워커를 통화 ID 해시 기반 큐로 바꿔, 같은 통화는 한 워커가 순서대로 처리 &nbsp;`Concurrency` `Message Ordering`
-- **멱등 저장** — 통화 정보를 upsert로 저장해 이벤트 도착 순서·재전송과 무관하게 1행 유지, 결과는 AES 암호화 저장 &nbsp;`Idempotency` `AES`
-- **마스킹 연동 개선** — 문장 단위 호출을 통화 종료 시 통화 단위 일괄 호출 + 일괄 업데이트로 전환 &nbsp;`Batch Update`
+- **Graceful Shutdown** &nbsp;리스너 단계적 정지(stop → pause → 재시도 → 진입 차단) → 내부 큐·처리 중 작업 소진 → 종료, 배포 전 drain API 제공
+- **유실 없는 커밋** &nbsp;자동 커밋을 끄고 DB 저장 성공 후에만 오프셋 커밋 &nbsp;`Manual Ack` `at-least-once`
+- **순서 보장 + 병렬 처리** &nbsp;파티션 고정 워커 → 통화 ID 해시 큐로 바꿔 같은 통화는 한 워커가 순서대로 처리 &nbsp;`Concurrency`
+- **마스킹 연동 개선** &nbsp;문장 단위 호출 → 통화 단위 일괄 호출 + 일괄 업데이트, 통화 정보는 upsert로 멱등 저장 &nbsp;`Batch Update` `Idempotency`
 
 <br/>
 
 ### Project 4 · 상담 AI 분석 파이프라인 (STT · 유형분류 · 요약) &nbsp;|&nbsp; 백엔드 설계·개발
 
-`2025.08 ~ 2025.12` &nbsp; 상담 STT → 유형 분류 → 요약 파이프라인 · 서버 2대 운영
+`2025.08 ~ 2025.12` &nbsp; 서버 2대 운영
 
-**역할** &nbsp;Kafka Producer/Consumer 기반 분석 파이프라인 백엔드 설계·개발, 장애 대응
+```mermaid
+flowchart LR
+    SYS["상담 시스템"] -- "분석 요청" --> P["요청 API<br/>중복 차단"]
+    P --> K1[("Kafka")]
+    K1 --> AI["AI 엔진<br/>STT · 분류 · 요약"]
+    AI --> K2[("Kafka")]
+    K2 --> C["결과 컨슈머<br/>서버 2대"]
+    C --> DB[("MySQL")]
+    C -. "결과 누락 시 재호출" .-> AI
+    C -- "결과 전달" --> SYS
+    class P,C mine
+    classDef mine fill:#0969DA,stroke:#0969DA,color:#fff
+```
 
 | 해결한 문제 | Before | After |
-|:---|:---:|:---:|
-| 분석 결과 누락 | 하루 **2만여 건** 누락 장애 | 누락 **0건** |
-| 서버 간 중복 처리 | 중복 저장 · 조회 오류 | 서버 간 **원자적 차단** |
+|:---|:---|:---|
+| 분석 결과 누락 | `██████████` 하루 2만여 건 | `▏` **0건** |
+| 서버 간 중복 처리 | 중복 저장 · 조회 오류 | **원자적 차단** |
 
-**핵심 구현**
-- **장애 자동 복구** — 결과가 비거나 실패로 오면 전용 스레드풀(유한 큐)에서 분석 엔진을 최대 3회 재호출, 최종 실패는 별도 로그로 격리. 누락분은 기간 단위 복구 앱으로 보정 &nbsp;`Retry` `ThreadPool`
-- **분산 중복 차단** — 서버 2대가 공유하는 전용 테이블에 `INSERT IGNORE`로 원자 판정, 처리가 멈춘 건은 TTL 만료 시 인계, DB 장애 시에는 유실보다 중복을 택하는 fail-open &nbsp;`INSERT IGNORE` `TTL` `Fail-open`
-- **멱등 재처리** — 재등록 요청은 기존 결과 삭제 후 재저장, 통화 정보·결과 행은 upsert로 몇 번 처리돼도 1건 유지 &nbsp;`Idempotency` `Upsert`
-- **순서 무관 완료 판정** — STT·분류·요약 결과가 어떤 순서로 도착해도, 마지막 도착 시점에 완료 처리와 음원 정리 수행 &nbsp;`Order-independent`
-- **통합 테스트** — Kafka 없이 STT → 분류 → 요약 전체 흐름(정상·재등록·중복·복구)을 검증 &nbsp;`JUnit` `Integration Test`
+- **장애 자동 복구** &nbsp;결과가 비거나 실패로 오면 전용 스레드풀에서 분석 엔진 최대 3회 재호출, 최종 실패는 별도 로그로 격리, 누락분은 복구 앱으로 보정 &nbsp;`Retry` `ThreadPool`
+- **분산 중복 차단** &nbsp;서버 2대가 공유하는 전용 테이블에 `INSERT IGNORE`로 원자 판정, 멈춘 건은 TTL 만료 시 인계, DB 장애 시 fail-open &nbsp;`TTL` `Fail-open`
+- **멱등 재처리** &nbsp;재등록 요청은 기존 결과 삭제 후 재저장, 통화 정보·결과는 upsert로 1건 유지 &nbsp;`Idempotency`
+- **순서 무관 완료 판정** &nbsp;STT·분류·요약이 어떤 순서로 도착해도 마지막 도착 시점에 완료 처리, Kafka 없이 전체 흐름을 검증하는 통합 테스트 작성 &nbsp;`Integration Test`
