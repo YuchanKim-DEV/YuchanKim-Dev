@@ -34,7 +34,7 @@
 </tr>
 <tr>
 <td><b>관심 분야</b></td>
-<td>대용량 트래픽을 견디는 백엔드 설계, 리액티브 스택과 이벤트 스트리밍</td>
+<td>대용량 트래픽을 견디는 백엔드 설계, 이벤트 스트리밍</td>
 </tr>
 <tr>
 <td><b>기록</b></td>
@@ -50,19 +50,13 @@
 <tr>
 <td width="130"><b>Language</b></td>
 <td width="900">
-<img src="https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white"/> <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white"/> <img src="https://img.shields.io/badge/SQL-336791?style=flat-square"/>
+<img src="https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white"/> <img src="https://img.shields.io/badge/SQL-336791?style=flat-square"/>
 </td>
 </tr>
 <tr>
 <td><b>Framework</b></td>
 <td>
-<img src="https://img.shields.io/badge/Spring%20Boot-6DB33F?style=flat-square&logo=springboot&logoColor=white"/> <img src="https://img.shields.io/badge/Spring%20WebFlux-6DB33F?style=flat-square&logo=spring&logoColor=white"/>
-</td>
-</tr>
-<tr>
-<td><b>WAS</b></td>
-<td>
-<img src="https://img.shields.io/badge/Apache%20Tomcat-F8DC75?style=flat-square&logo=apachetomcat&logoColor=black"/>
+<img src="https://img.shields.io/badge/Spring%20Boot-6DB33F?style=flat-square&logo=springboot&logoColor=white"/> <img src="https://img.shields.io/badge/Spring%20MVC-6DB33F?style=flat-square&logo=spring&logoColor=white"/>
 </td>
 </tr>
 <tr>
@@ -86,7 +80,7 @@
 <tr>
 <td><b>Container</b></td>
 <td>
-<img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white"/> <img src="https://img.shields.io/badge/Docker%20Compose-2496ED?style=flat-square&logo=docker&logoColor=white"/>
+<img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white"/>
 </td>
 </tr>
 <tr>
