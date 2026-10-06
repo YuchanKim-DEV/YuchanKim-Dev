@@ -114,6 +114,18 @@
 </td>
 </tr>
 <tr>
+<td><b>Issue&nbsp;Tracking</b></td>
+<td>
+<img src="https://img.shields.io/badge/Redmine-B32024?style=flat-square&logo=redmine&logoColor=white"/> <img src="https://img.shields.io/badge/Jira-0052CC?style=flat-square&logo=jira&logoColor=white"/> <img src="https://img.shields.io/badge/GitHub%20Projects-181717?style=flat-square&logo=github&logoColor=white"/> <img src="https://img.shields.io/badge/Notion-000000?style=flat-square&logo=notion&logoColor=white"/>
+</td>
+</tr>
+<tr>
+<td><b>Collaboration</b></td>
+<td>
+<img src="https://img.shields.io/badge/Slack-4A154B?style=flat-square&logo=slack&logoColor=white"/>
+</td>
+</tr>
+<tr>
 <td><b>AI</b></td>
 <td>
 <img src="https://img.shields.io/badge/Claude-D97757?style=flat-square&logo=claude&logoColor=white"/>
