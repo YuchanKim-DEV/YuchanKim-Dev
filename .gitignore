@@ -1,0 +1,8 @@
+# Claude Code 관련 파일은 프로필 리포에 올리지 않는다
+CLAUDE.md
+CLAUDE.local.md
+HANDOVER.md
+HANDOFF.md
+HISTORY.md
+.claude/
+.mcp.json
