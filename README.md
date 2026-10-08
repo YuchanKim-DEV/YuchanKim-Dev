@@ -4,7 +4,7 @@
 
 # 김유찬 · Yuchan Kim
 
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=19&pause=1600&color=8B949E&center=true&vCenter=true&width=520&lines=Backend+Developer;Java+%C2%B7+Spring+Boot+%C2%B7+Kafka+%C2%B7+PostgreSQL;Don't+Stop%2C+Keep+Going" alt="Backend Developer"/>
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=19&pause=1600&color=8B949E&center=true&vCenter=true&width=520&lines=Backend+Developer;Don't+Stop%2C+Keep+Going" alt="Backend Developer"/>
 
 <br/>
 
