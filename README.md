@@ -1,4 +1,4 @@
-<p align="left"><img src="https://komarev.com/ghpvc/?username=YuchanKim-DEV&style=flat-square&color=8B949E&label=Profile+Views"/></p>
+<p align="left"><img src="https://komarev.com/ghpvc/?username=YuchanKim-Dev&label=Profile%20Views&color=8B949E&style=flat-square" alt="Profile Views"/></p>
 
 <div align="center">
 
