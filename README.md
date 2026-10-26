@@ -24,7 +24,7 @@
 </tr>
 <tr>
 <td><b>경력</b></td>
-<td>백엔드 개발자 · 2025-04-24 ~ 현재 (<!--YM_START-->1년 6개월차<!--YM_END--> · <!--DAYS_START-->549<!--DAYS_END-->일째)</td>
+<td>백엔드 개발자 · 2025-04-24 ~ 현재 (<!--YM_START-->1년 6개월차<!--YM_END--> · <!--DAYS_START-->550<!--DAYS_END-->일째)</td>
 </tr>
 <tr>
 <td><b>주요 경험</b></td>
